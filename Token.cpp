@@ -22,6 +22,10 @@ TokenType Token::ReturnTokenType() {
     return this->type;
 }
 
+string Token::ReturnTokenDescription() {
+    return this->description;
+}
+
 void Token::toString() { //(COLON_DASH,":-",6)... example format.
 
     cout << ("(");

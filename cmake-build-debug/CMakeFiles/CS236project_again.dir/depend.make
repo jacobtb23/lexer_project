@@ -30,18 +30,24 @@ CMakeFiles/CS236project_again.dir/Lexer.cpp.o: ../Token.h
 CMakeFiles/CS236project_again.dir/Lexer.cpp.o: ../UnterminatedBlockCommentAutomaton.h
 CMakeFiles/CS236project_again.dir/Lexer.cpp.o: ../UnterminatedStringAutomaton.h
 
+CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../DataLog.h
+CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Parameter.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Parser.cpp
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Parser.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Predicate.h
+CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Rule.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Token.h
 
 CMakeFiles/CS236project_again.dir/Token.cpp.o: ../Token.cpp
 CMakeFiles/CS236project_again.dir/Token.cpp.o: ../Token.h
 
 CMakeFiles/CS236project_again.dir/main.cpp.o: ../Automaton.h
+CMakeFiles/CS236project_again.dir/main.cpp.o: ../DataLog.h
 CMakeFiles/CS236project_again.dir/main.cpp.o: ../Lexer.h
+CMakeFiles/CS236project_again.dir/main.cpp.o: ../Parameter.h
 CMakeFiles/CS236project_again.dir/main.cpp.o: ../Parser.h
 CMakeFiles/CS236project_again.dir/main.cpp.o: ../Predicate.h
+CMakeFiles/CS236project_again.dir/main.cpp.o: ../Rule.h
 CMakeFiles/CS236project_again.dir/main.cpp.o: ../Token.h
 CMakeFiles/CS236project_again.dir/main.cpp.o: ../main.cpp
 

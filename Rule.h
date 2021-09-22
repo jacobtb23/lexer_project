@@ -10,12 +10,12 @@ using namespace std;
 class Rule
 {
 private:
-   Predicate* headPredicateId;
-   vector<string*> headPredicateList;
-   vector<Predicate*> rulePredicateList;
+    Predicate* headPredicateId;
+    vector<string*> headPredicateList;
+    vector<Predicate*> rulePredicateList;
 public:
-    Rule();
-    ~Rule();
+    Rule() {};
+    ~Rule() {};
 
     void toString() {
 

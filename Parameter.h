@@ -15,7 +15,10 @@ public:
     Parameter();
     ~Parameter();
 
-    void toString();
+    Parameter(string element) {
+        this->stringOrId = element;
+    }
 
+    void toString();
 };
 #endif //CS236MAIN_PARAMETER_H

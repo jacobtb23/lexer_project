@@ -2,16 +2,24 @@
 #define MAIN_PARSER_H
 #include "Token.h"
 #include "Predicate.h"
+#include "Parameter.h"
 using namespace std;
+
+class tokenException : public std::exception {
+public:
+    explicit tokenException(Token* badTokenIn) { badToken = badTokenIn;}
+    Token* what() {return badToken;}
+private:
+    Token* badToken;
+};
 
 class Parser //Holds all the functions for the parsing process and has access to the tokens created by the lexer
 {
 private:
     unsigned int index;
-    //vector<Predicate*> schemeVector;
-    //vector<Predicate*> factsVector;
-    //vector<Predicate*> queriesVector;
-
+    vector<Predicate*> schemeVector;
+    vector<Predicate*> factsVector;
+    vector<Predicate*> queriesVector;
 public:
 
     Parser();
@@ -33,13 +41,13 @@ public:
     void Query(vector<Token*> tokens);
 
     void HeadPredicate(vector<Token*> tokens);
-    void Predicate(vector<Token*> tokens);
+    void PredicateFunction(vector<Token*> tokens);
 
     void PredicateList(vector<Token*> tokens);
     void ParameterList(vector<Token*> tokens);
     void StringList(vector<Token*> tokens);
-    void IdList(vector<Token*> tokens);
-    void Parameter(vector<Token*> tokens);
+    void IdList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
+    void ParameterFunction(vector<Token*> tokens);
 
 
 

@@ -38,6 +38,7 @@ public:
     void toString(); //(COLON_DASH,":-",6)... example format.
     int isComment();
     TokenType ReturnTokenType();
+    string ReturnTokenDescription();
 
 };
 

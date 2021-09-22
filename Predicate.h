@@ -1,11 +1,24 @@
-#ifndef CS236MAIN_PREDICATE_H
-#define CS236MAIN_PREDICATE_H
+#ifndef CS236PROJECT_AGAIN_PREDICATE_H
+#define CS236PROJECT_AGAIN_PREDICATE_H
+#include "Parameter.h"
+#include <vector>
+
 class Predicate
 {
 private:
-public:
-    Predicate();
-    ~Predicate();
-};
+    string PredicateId;
+    vector<Parameter*> parameterVector;
 
-#endif //CS236MAIN_PREDICATE_H
+public:
+    Predicate() {}
+    ~Predicate() {}
+
+    Predicate(string PredicateId, vector<Parameter*> parameterVector) {
+        this->PredicateId = PredicateId;
+
+        for(Parameter* i : parameterVector) {
+            this->parameterVector.push_back(i);
+        }
+    }
+};
+#endif //CS236PROJECT_AGAIN_PREDICATE_H

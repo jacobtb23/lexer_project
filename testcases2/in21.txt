@@ -1,5 +1,3 @@
-
-
 Schemes:
   snap(S,N,A,P)
   pop(P,O,P)

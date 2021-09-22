@@ -12,9 +12,9 @@ using namespace std;
 class DataLog
 {
 private:
-    vector<Predicate*> schemeVector;
-    vector<Predicate*> factsVector;
-    vector<Predicate*> queriesVector;
+    vector<Predicate*> datalogSchemes;
+    vector<Predicate*> dataLogFacts;
+    vector<Predicate*> datalogQueries;
 public:
     DataLog();
     ~DataLog();
