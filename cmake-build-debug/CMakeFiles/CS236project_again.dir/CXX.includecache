@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Automaton.h
+Token.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.h
+
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.h
+vector
+-
+Automaton.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Automaton.h
+Token.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.h
+
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parameter.h
 vector
 -
@@ -50,5 +62,17 @@ Parameter.h
 string
 -
 vector
+-
+
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/main.cpp
+Lexer.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.h
+Parser.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.h
+fstream
+-
+sstream
+-
+iostream
 -
 
