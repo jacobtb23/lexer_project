@@ -2,7 +2,6 @@
 #define CS236MAIN_PARAMETER_H
 #include <vector>
 #include <iostream>
-#include "DataLog.h"
 
 using namespace std;
 
@@ -12,13 +11,13 @@ private:
     string stringOrId;
 public:
 
-    Parameter();
-    ~Parameter();
+    Parameter() {};
+    ~Parameter() {};
 
     Parameter(string element) {
         this->stringOrId = element;
     }
 
-    void toString();
+    void toString() {};
 };
 #endif //CS236MAIN_PARAMETER_H

@@ -10,18 +10,6 @@
 Token.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.h
 
-/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/DataLog.h
-vector
--
-iostream
--
-Predicate.h
-/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Predicate.h
-Rule.h
-/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Rule.h
-Parameter.h
-/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parameter.h
-
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.h
 vector
 -
@@ -35,8 +23,6 @@ vector
 -
 iostream
 -
-DataLog.h
-/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/DataLog.h
 
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.cpp
 Parser.h
@@ -55,6 +41,10 @@ Predicate.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Predicate.h
 Parameter.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parameter.h
+Rule.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Rule.h
+set
+-
 
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Predicate.h
 Parameter.h
@@ -63,14 +53,10 @@ vector
 -
 
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Rule.h
-vector
--
-iostream
--
 Predicate.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Predicate.h
-DataLog.h
-/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/DataLog.h
+Parameter.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parameter.h
 
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.h
 string

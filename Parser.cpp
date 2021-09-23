@@ -6,7 +6,30 @@ using namespace std;
 
 Parser::Parser() {}
 
-Parser::~Parser() {} //delete these objects
+Parser::~Parser() {
+    for (Predicate *deletePointer : schemeVector) {
+        delete deletePointer;
+    }
+    schemeVector.clear();
+
+    for (Predicate *deletePointer : factsVector) {
+        delete deletePointer;
+    }
+    factsVector.clear();
+
+    for (Predicate *deletePointer : queriesVector) {
+        delete deletePointer;
+    }
+    queriesVector.clear();
+
+    for (Rule *deletePointer : rulesVector) { //class?
+        delete deletePointer;
+    }
+    rulesVector.clear();
+
+    domainSet.clear();
+
+}
 
 void Parser::ParseSyntax(vector<Token*> tokens) {
     cout << endl << endl;
@@ -17,7 +40,7 @@ void Parser::ParseSyntax(vector<Token*> tokens) {
     try {
         DatalogProgram(tokens);
     }
-    catch (tokenException error) {
+    catch (tokenException &error) {
         cout << "Failure!" << endl;
         cout << "  ";
         error.what()->toString();
@@ -143,7 +166,7 @@ void Parser::RuleList(vector<Token*> tokens) {
         //What happens here for Lambda
     }
     else if (tokens.at(index)->ReturnTokenType() == TokenType::ID) { //If in first set keep going!
-        Rule(tokens);
+        RuleFunction(tokens);
         RuleList(tokens);
     }
     else {
@@ -165,9 +188,9 @@ void Parser::QueryList(vector<Token*> tokens) {
 }
 
 void Parser::Scheme(vector<Token*> tokens) {
+
     string firstID = "";
     vector<Parameter*> parameterVector;
-    //vector of parameters -> &passbyreference to idlist
 
     if(tokens.at(index)->ReturnTokenType() == TokenType::ID) {
         firstID = tokens.at(index)->ReturnTokenDescription();
@@ -208,12 +231,16 @@ void Parser::Scheme(vector<Token*> tokens) {
 
     Predicate* newPredicate = new Predicate(firstID,parameterVector);
     schemeVector.push_back(newPredicate);
-
 }
 
 void Parser::Fact(vector<Token*> tokens) {
+
+    string firstID = "";
+    vector<Parameter*> parameterVector;
+
     //Check for ID.
     if(tokens.at(index)->ReturnTokenType() == TokenType::ID) {
+        firstID = tokens.at(index)->ReturnTokenDescription();
         index++;
     }
     else {
@@ -228,16 +255,17 @@ void Parser::Fact(vector<Token*> tokens) {
         throw tokenException(tokens.at(index)); // Output troublesome token.
     }
 
-    //Check for ID again.
     if(tokens.at(index)->ReturnTokenType() == TokenType::STRING) {
+        Parameter* newParameter = new Parameter(tokens.at(index)->ReturnTokenDescription());
+        parameterVector.push_back(newParameter);
+        domainSet.insert(tokens.at(index)->ReturnTokenDescription());
         index++;
     }
     else {
         throw tokenException(tokens.at(index));
     }
 
-    //Lok for ID's...
-    StringList(tokens); //How do we get this to stop?
+    StringList(tokens, parameterVector); //How do we get this to stop?
 
     //Look for final right parenthesis
     if(tokens.at(index)->ReturnTokenType() == TokenType::RIGHT_PAREN) {
@@ -254,11 +282,17 @@ void Parser::Fact(vector<Token*> tokens) {
     else {
         throw tokenException(tokens.at(index)); // Output troublesome token.
     }
+
+    Predicate* newPredicate = new Predicate(firstID,parameterVector);
+    factsVector.push_back(newPredicate);
+
 }
 
-void Parser::Rule(vector<Token*> tokens) {
+void Parser::RuleFunction(vector<Token*> tokens) {
+    string firstID = "";
+    vector<Parameter*> parameterVector;
 
-    HeadPredicate(tokens); //Rules start with head predicates
+    HeadPredicate(firstID, tokens, parameterVector); //Rules start with head predicates
 
     if(tokens.at(index)->ReturnTokenType() == TokenType::COLON_DASH) {
         index++;
@@ -267,8 +301,8 @@ void Parser::Rule(vector<Token*> tokens) {
         throw tokenException(tokens.at(index)); // Output troublesome token.
     }
 
-    PredicateFunction(tokens);
-    PredicateList(tokens);
+    PredicateFunction(firstID,tokens, parameterVector);
+    PredicateList(tokens, parameterVector);
 
     //check for colon...
     if(tokens.at(index)->ReturnTokenType() == TokenType::PERIOD) {
@@ -281,8 +315,10 @@ void Parser::Rule(vector<Token*> tokens) {
 }
 
 void Parser::Query(vector<Token*> tokens) {
-    //Starts with a predicate.
-    PredicateFunction(tokens);
+    string firstID = "";
+    vector<Parameter*> parameterVector;
+
+    PredicateFunction(firstID,tokens, parameterVector);
 
     //Look for a Question Mark.
     if (tokens.at(index)->ReturnTokenType() == TokenType::Q_MARK) { //If next token is in the follow set, then we want to stop...
@@ -291,15 +327,17 @@ void Parser::Query(vector<Token*> tokens) {
     else {
         throw tokenException(tokens.at(index));
     }
+
+    Predicate* newPredicate = new Predicate(firstID,parameterVector);
+    factsVector.push_back(newPredicate);
+
 }
 
-void Parser::HeadPredicate(vector<Token*> tokens) {
-    string firstID = "";
-    vector<Parameter*> parameterVector;
+void Parser::HeadPredicate(string &firstId, vector<Token*> tokens, vector<Parameter*> &parameterVector) {
 
     //Check for ID
     if(tokens.at(index)->ReturnTokenType() == TokenType::ID) {
-        firstID = tokens.at(index)->ReturnTokenDescription();
+        firstId = tokens.at(index)->ReturnTokenDescription();
         index++;
     }
     else {
@@ -336,9 +374,11 @@ void Parser::HeadPredicate(vector<Token*> tokens) {
     }
 }
 
-void Parser::PredicateFunction(vector<Token *> tokens) {
+void Parser::PredicateFunction(string &firstId, vector<Token *> tokens, vector<Parameter*> &parameterVector) {
+
     //Check for ID
     if(tokens.at(index)->ReturnTokenType() == TokenType::ID) {
+        firstId = tokens.at(index)->ReturnTokenDescription();
         index++;
     }
     else {
@@ -354,8 +394,8 @@ void Parser::PredicateFunction(vector<Token *> tokens) {
     }
 
    //check for a parameter and then parameter list
-    ParameterFunction(tokens);
-    ParameterList(tokens);
+    ParameterFunction(tokens, parameterVector);
+    ParameterList(tokens, parameterVector);
 
     //Look for right parenthesis
     if(tokens.at(index)->ReturnTokenType() == TokenType::RIGHT_PAREN) {
@@ -364,9 +404,10 @@ void Parser::PredicateFunction(vector<Token *> tokens) {
     else {
         throw tokenException(tokens.at(index)); // Output troublesome token.
     }
+
 }
 
-void Parser::PredicateList(vector<Token*> tokens) {
+void Parser::PredicateList(vector<Token*> tokens, vector<Parameter*> &parameterVector) {
     if (tokens.at(index)->ReturnTokenType() == TokenType::PERIOD) { //If next token is in the follow set, then we want to stop...
         //lambda
     }
@@ -374,15 +415,16 @@ void Parser::PredicateList(vector<Token*> tokens) {
         index++;
 
         //Call predicate and predicate list.
-        PredicateFunction(tokens);
-        PredicateList(tokens);
+        string firstId;
+        PredicateFunction(firstId,tokens,parameterVector);
+        PredicateList(tokens, parameterVector);
     }
     else {
         throw tokenException(tokens.at(index));
     }
 }
 
-void Parser::ParameterList(vector<Token*> tokens) {
+void Parser::ParameterList(vector<Token*> tokens, vector<Parameter*> &parameterVector) {
     if (tokens.at(index)->ReturnTokenType() == TokenType::RIGHT_PAREN) { //If next token is in the follow set, then we want to stop...
         //lambda
     }
@@ -390,15 +432,15 @@ void Parser::ParameterList(vector<Token*> tokens) {
         index++;
 
         //Call predicate and predicate list.
-        ParameterFunction(tokens);
-        ParameterList(tokens);
+        ParameterFunction(tokens,parameterVector );
+        ParameterList(tokens, parameterVector);
     }
     else {
         throw tokenException(tokens.at(index));
     }
 }
 
-void Parser::StringList(vector<Token*> tokens) {
+void Parser::StringList(vector<Token*> tokens, vector<Parameter*> &parameterVector) {
     if (tokens.at(index)->ReturnTokenType() == TokenType::RIGHT_PAREN) { //If next token is in the follow set, then we want to stop...
         //lambda
     }
@@ -406,8 +448,11 @@ void Parser::StringList(vector<Token*> tokens) {
         index++;
 
         if(tokens.at(index)->ReturnTokenType() == TokenType::STRING) {
+            Parameter* newParameter = new Parameter(tokens.at(index)->ReturnTokenDescription());
+            parameterVector.push_back(newParameter);
+            domainSet.insert(tokens.at(index)->ReturnTokenDescription());
             index++;
-            StringList(tokens);
+            StringList(tokens, parameterVector);
         }
         else {
             throw tokenException(tokens.at(index));
@@ -440,11 +485,15 @@ void Parser::IdList(vector<Token*> tokens, vector<Parameter*> &parameterVector) 
     }
 }
 
-void Parser::ParameterFunction(vector<Token*> tokens) {
+void Parser::ParameterFunction(vector<Token *> tokens, vector<Parameter *> &parameterVector) {
     if(tokens.at(index)->ReturnTokenType() == TokenType::ID) {
+        Parameter* newParameter = new Parameter(tokens.at(index)->ReturnTokenDescription());
+        parameterVector.push_back(newParameter);
         index++;
     }
     else if (tokens.at(index)->ReturnTokenType() == TokenType::STRING) {
+        Parameter* newParameter = new Parameter(tokens.at(index)->ReturnTokenDescription());
+        parameterVector.push_back(newParameter);
         index++;
     }
     else {

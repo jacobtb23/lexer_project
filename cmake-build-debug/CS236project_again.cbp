@@ -100,9 +100,6 @@
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/CommaAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/DataLog.h">
-			<Option target="CS236project_again"/>
-		</Unit>
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/FactsAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>

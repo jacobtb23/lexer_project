@@ -32,10 +32,8 @@ int main(int argc, char** argv) {
         Parser *parserObj = new Parser();
         parserObj->ParseSyntax(lexerObj->ReturnTokens());
 
-
         delete lexerObj;
         delete parserObj;
-
 
     return 0;
 }

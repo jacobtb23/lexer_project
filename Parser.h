@@ -3,6 +3,9 @@
 #include "Token.h"
 #include "Predicate.h"
 #include "Parameter.h"
+#include "Rule.h"
+#include <set>
+
 using namespace std;
 
 class tokenException : public std::exception {
@@ -13,20 +16,21 @@ private:
     Token* badToken;
 };
 
-class Parser //Holds all the functions for the parsing process and has access to the tokens created by the lexer
+class Parser
 {
 private:
     unsigned int index;
     vector<Predicate*> schemeVector;
-    vector<Predicate*> factsVector;
+    vector<Predicate*> factsVector; //when adding to the fact also add to the set
+    set<string> domainSet;
     vector<Predicate*> queriesVector;
+    vector<Rule*> rulesVector;
 public:
 
-    Parser();
+    Parser(); //create datalog object here?
     ~Parser();
 
     void ParseSyntax(vector<Token*> tokens); //Once you have implemented this, start checking for matches on the "Success" and "Failure"
-
 
     //Make functions for each production in the grammar given to you! This is just going to check syntax, that is why it is void.
     void DatalogProgram(vector<Token*> tokens);
@@ -37,17 +41,18 @@ public:
 
     void Scheme(vector<Token*> tokens);
     void Fact(vector<Token*> tokens);
-    void Rule(vector<Token*> tokens);
+    void RuleFunction(vector<Token*> tokens);
     void Query(vector<Token*> tokens);
 
-    void HeadPredicate(vector<Token*> tokens);
-    void PredicateFunction(vector<Token*> tokens);
+    void HeadPredicate(string &firstId, vector<Token*> tokens, vector<Parameter*> &parameterVector);
+    void PredicateFunction(string &firstId, vector<Token*> tokens, vector<Parameter*> &parameterVector);
 
-    void PredicateList(vector<Token*> tokens);
-    void ParameterList(vector<Token*> tokens);
-    void StringList(vector<Token*> tokens);
+    void PredicateList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
+    void ParameterList(vector<Token*> tokens,vector<Parameter*> &parameterVector);
+    void StringList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
     void IdList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
-    void ParameterFunction(vector<Token*> tokens);
+    void ParameterFunction(vector<Token*> tokens, vector<Parameter*> &parameterVector);
+    //function that returns datalog program?
 
 
 
