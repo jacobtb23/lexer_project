@@ -7,17 +7,24 @@ using namespace std;
 
 class Rule {
 private:
-    string headPredicateID;
     Predicate* headPredicate;
-    vector<Parameter*> headPredicateList;
-
-    string predicateId;
-    vector<Predicate*> predicateList;
+    vector<Predicate*> rulePredicates;
 
 public:
     Rule(){}
     ~Rule(){}
-    void toString() {}
+
+    Rule(Predicate* headPredicate, vector<Predicate*>rulePredicates) {
+        this->headPredicate = headPredicate;
+
+        for(Predicate* i : rulePredicates) {
+            this->rulePredicates.push_back(i);
+        }
+    }
+
+    void toString() {
+
+    }
 };
 
 #endif //CS236PROJECT_AGAIN_RULE_H

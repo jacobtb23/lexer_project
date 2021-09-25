@@ -312,25 +312,61 @@ void Parser::RuleFunction(vector<Token*> tokens) {
         throw tokenException(tokens.at(index)); // Output troublesome token.
     }
 
+    Rule* newRule = new Rule(headPredicate,rulePredicates);
+    rulesVector.push_back(newRule);
+    rulePredicates.clear();
+
 }
 
 void Parser::Query(vector<Token*> tokens) {
     string firstID = "";
     vector<Parameter*> parameterVector;
 
-    PredicateFunction(firstID,tokens, parameterVector);
+    if(tokens.at(index)->ReturnTokenType() == TokenType::ID) {
+        firstID = tokens.at(index)->ReturnTokenDescription();
+        index++;
+    }
+    else {
+        throw tokenException(tokens.at(index)); // Output troublesome token.
+    }
 
-    //Look for a Question Mark.
-    if (tokens.at(index)->ReturnTokenType() == TokenType::Q_MARK) { //If next token is in the follow set, then we want to stop...
+    //Check for Left Parenthesis.
+    if(tokens.at(index)->ReturnTokenType() == TokenType::LEFT_PAREN) {
+        index++;
+    }
+    else {
+        throw tokenException(tokens.at(index)); // Output troublesome token.
+    }
+
+    //Check for ID again.
+    if(tokens.at(index)->ReturnTokenType() == TokenType::ID || tokens.at(index)->ReturnTokenType() == TokenType::STRING) {
+        Parameter* newParameter = new Parameter(tokens.at(index)->ReturnTokenDescription());
+        parameterVector.push_back(newParameter);
         index++;
     }
     else {
         throw tokenException(tokens.at(index));
     }
 
-    Predicate* newPredicate = new Predicate(firstID,parameterVector);
-    factsVector.push_back(newPredicate);
+    StringOrIdList(tokens, parameterVector);
 
+    //Look for final right parenthesis
+    if(tokens.at(index)->ReturnTokenType() == TokenType::RIGHT_PAREN) {
+        index++;
+    }
+    else {
+        throw tokenException(tokens.at(index)); // Output troublesome token.
+    }
+
+    if(tokens.at(index)->ReturnTokenType() == TokenType::Q_MARK) {
+        index++;
+    }
+    else {
+        throw tokenException(tokens.at(index)); // Output troublesome token.
+    }
+
+    Predicate* newPredicate = new Predicate(firstID,parameterVector);
+    queriesVector.push_back(newPredicate);
 }
 
 void Parser::HeadPredicate(string &firstId, vector<Token*> tokens, vector<Parameter*> &parameterVector) {
@@ -372,6 +408,9 @@ void Parser::HeadPredicate(string &firstId, vector<Token*> tokens, vector<Parame
     else {
         throw tokenException(tokens.at(index)); // Output troublesome token.
     }
+
+    headPredicate = new Predicate(firstId, parameterVector);
+    parameterVector.clear();
 }
 
 void Parser::PredicateFunction(string &firstId, vector<Token *> tokens, vector<Parameter*> &parameterVector) {
@@ -405,6 +444,9 @@ void Parser::PredicateFunction(string &firstId, vector<Token *> tokens, vector<P
         throw tokenException(tokens.at(index)); // Output troublesome token.
     }
 
+    Predicate* newPredicate = new Predicate(firstId,parameterVector);
+    rulePredicates.push_back(newPredicate);
+    parameterVector.clear();
 }
 
 void Parser::PredicateList(vector<Token*> tokens, vector<Parameter*> &parameterVector) {
@@ -475,6 +517,28 @@ void Parser::IdList(vector<Token*> tokens, vector<Parameter*> &parameterVector) 
             parameterVector.push_back(newParameter);
             index++;
             IdList(tokens, parameterVector);
+        }
+        else {
+            throw tokenException(tokens.at(index));
+        }
+    }
+    else {
+        throw tokenException(tokens.at(index));
+    }
+}
+
+void Parser::StringOrIdList(vector<Token *> tokens, vector<Parameter *> &parameterVector) {
+    if (tokens.at(index)->ReturnTokenType() == TokenType::RIGHT_PAREN) { //If next token is in the follow set, then we want to stop...
+        //lambda
+    }
+    else if (tokens.at(index)->ReturnTokenType() == TokenType::COMMA) { //Next character is in the first set, keep looking...
+        index++;
+
+        if(tokens.at(index)->ReturnTokenType() == TokenType::ID || tokens.at(index)->ReturnTokenType() == TokenType::STRING) {
+            Parameter* newParameter = new Parameter(tokens.at(index)->ReturnTokenDescription());
+            parameterVector.push_back(newParameter);
+            index++;
+            StringOrIdList(tokens, parameterVector);
         }
         else {
             throw tokenException(tokens.at(index));

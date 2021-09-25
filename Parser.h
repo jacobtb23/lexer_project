@@ -25,6 +25,8 @@ private:
     set<string> domainSet;
     vector<Predicate*> queriesVector;
     vector<Rule*> rulesVector;
+    vector<Predicate*> rulePredicates;
+    Predicate *headPredicate;
 public:
 
     Parser(); //create datalog object here?
@@ -51,6 +53,7 @@ public:
     void ParameterList(vector<Token*> tokens,vector<Parameter*> &parameterVector);
     void StringList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
     void IdList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
+    void StringOrIdList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
     void ParameterFunction(vector<Token*> tokens, vector<Parameter*> &parameterVector);
     //function that returns datalog program?
 
