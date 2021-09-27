@@ -131,11 +131,11 @@ void Lexer::Run(string& input) {
     tokens.push_back(eof);
 
     // Output all tokens...
-    for(int i=0; i<(int)tokens.size(); i++) {
-        Token printToken = *tokens.at(i);
-        printToken.toString();
-    }
+   // for(int i=0; i<(int)tokens.size(); i++) {
+    //    Token printToken = *tokens.at(i);
+   //     printToken.toString();
+   // }
 
     // Output total number of tokens
-    cout << "Total Tokens = " << tokens.size();
+    //cout << "Total Tokens = " << tokens.size();
 }

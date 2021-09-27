@@ -32,9 +32,6 @@ Parser::~Parser() {
 }
 
 void Parser::ParseSyntax(vector<Token*> tokens) {
-    cout << endl << endl;
-    cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << "Testing for the parser:" << endl << endl;
 
     index = 0;
     try {
