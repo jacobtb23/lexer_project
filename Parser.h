@@ -55,6 +55,7 @@ public:
     void IdList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
     void StringOrIdList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
     void ParameterFunction(vector<Token*> tokens, vector<Parameter*> &parameterVector);
+    void dataLogToString();
     //function that returns datalog program?
 
 

@@ -133,6 +133,49 @@ void Parser::DatalogProgram(vector<Token*> tokens) {
     else {
         throw tokenException(tokens.at(index)); // Output troublesome token.
     }
+
+    //->toString() is called here?
+    cout << "Schemes(" << schemeVector.size() << "):";
+    for (unsigned int i = 0; i < schemeVector.size(); i++){
+        cout << endl;
+        cout << "  ";
+        schemeVector.at(i)->PredicateToString();
+
+    }
+
+    cout << endl << "Facts(" << factsVector.size() << "):";
+    for (unsigned int i = 0; i < factsVector.size(); i++){
+        cout << endl;
+        cout << "  ";
+        factsVector.at(i)->PredicateToString();
+        cout << ".";
+    }
+
+    cout << endl << "Rules(" << rulesVector.size() << "):";
+    for (unsigned int i = 0; i < rulesVector.size(); i++){
+        cout << endl;
+        cout << "  ";
+        rulesVector.at(i)->RulesToString();
+        cout << ".";
+    }
+
+    cout << endl <<  "Queries(" << queriesVector.size() << "):";
+    for (unsigned int i = 0; i < queriesVector.size(); i++){
+        cout << endl;
+        cout << "  ";
+        queriesVector.at(i)->PredicateToString();
+        cout << "?";
+    }
+    cout << endl << "Domain(" << domainSet.size() << "):";
+    set<string>::iterator domainIterator = domainSet.begin();
+    for (unsigned int i = 0; i < domainSet.size(); i++) {
+        cout << endl;
+        cout << "  ";
+        string setItem = domainIterator->substr(0, domainIterator->size());
+        cout << setItem;
+        domainIterator++;
+    }
+    cout << endl;
 }
 
 void Parser::SchemeList(vector<Token*> tokens) {

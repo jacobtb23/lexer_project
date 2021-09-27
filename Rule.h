@@ -16,14 +16,20 @@ public:
 
     Rule(Predicate* headPredicate, vector<Predicate*>rulePredicates) {
         this->headPredicate = headPredicate;
-
         for(Predicate* i : rulePredicates) {
             this->rulePredicates.push_back(i);
         }
     }
 
-    void toString() {
-
+    void RulesToString() {
+       headPredicate->PredicateToString();
+       cout << " :- ";
+       for (unsigned int i = 0; i < rulePredicates.size(); i++) {
+            rulePredicates.at(i)->PredicateToString();
+            if(i != rulePredicates.size() - 1) {
+                cout << ",";
+            }
+       }
     }
 };
 

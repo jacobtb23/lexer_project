@@ -26,5 +26,16 @@ public:
             this->parameterVector.push_back(i);
         }
     }
+
+    void PredicateToString() {
+        cout << PredicateId << "(";
+        for (unsigned int i = 0; i < parameterVector.size(); i++) {
+            parameterVector.at(i)->ParameterToString();
+            if (i != parameterVector.size() - 1) {
+                cout << ",";
+            }
+        }
+        cout << ")";
+    }
 };
 #endif //CS236PROJECT_AGAIN_PREDICATE_H

@@ -11,13 +11,15 @@ private:
     string stringOrId;
 public:
 
-    Parameter() {};
-    ~Parameter() {};
+    Parameter() {}
+    ~Parameter() {}
 
     Parameter(string element) {
         this->stringOrId = element;
     }
 
-    void toString() {};
+    void ParameterToString() {
+        cout << stringOrId;
+    }
 };
 #endif //CS236MAIN_PARAMETER_H
