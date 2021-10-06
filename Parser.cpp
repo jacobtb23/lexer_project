@@ -1,6 +1,7 @@
 #include "Parser.h"
 #include "Parameter.h"
 #include "Predicate.h"
+#include "DataLog.h"
 #include <iostream>
 using namespace std;
 
@@ -173,6 +174,8 @@ void Parser::DatalogProgram(vector<Token*> tokens) {
         domainIterator++;
     }
     cout << endl;
+    DataLog *dataLogObj = new DataLog(schemeVector,factsVector,queriesVector, rulesVector, domainSet);
+    //Start lab 3 here? And delete?
 }
 
 void Parser::SchemeList(vector<Token*> tokens) {

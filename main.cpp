@@ -1,5 +1,6 @@
 #include "Lexer.h"
 #include "Parser.h"
+#include "DataLog.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -31,6 +32,7 @@ int main(int argc, char** argv) {
 
         Parser *parserObj = new Parser();
         parserObj->ParseSyntax(lexerObj->ReturnTokens());
+
 
         delete lexerObj;
         delete parserObj;

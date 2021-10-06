@@ -4,6 +4,7 @@
 #include "Predicate.h"
 #include "Parameter.h"
 #include "Rule.h"
+#include "set"
 #include <set>
 
 using namespace std;
@@ -25,6 +26,7 @@ private:
     set<string> domainSet;
     vector<Predicate*> queriesVector;
     vector<Rule*> rulesVector;
+
     vector<Predicate*> rulePredicates;
     Predicate *headPredicate;
 public:
@@ -55,13 +57,5 @@ public:
     void IdList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
     void StringOrIdList(vector<Token*> tokens, vector<Parameter*> &parameterVector);
     void ParameterFunction(vector<Token*> tokens, vector<Parameter*> &parameterVector);
-    void dataLogToString();
-    //function that returns datalog program?
-
-
-
-    //Datalog ParseDatalog();
-    //Make functions for each production in the grammar given to you! These will actually create facts, schemes, rules, and domains
-
 };
 #endif //MAIN_PARSER_H
