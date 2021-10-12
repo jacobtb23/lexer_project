@@ -10,6 +10,14 @@
 Token.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.h
 
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/DataLog.h
+Parser.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.h
+Rule.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Rule.h
+Predicate.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Predicate.h
+
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.h
 vector
 -
@@ -24,6 +32,18 @@ vector
 iostream
 -
 
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.cpp
+Parser.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.h
+Parameter.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parameter.h
+Predicate.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Predicate.h
+DataLog.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/DataLog.h
+iostream
+-
+
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.h
 Token.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.h
@@ -33,6 +53,8 @@ Parameter.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parameter.h
 Rule.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Rule.h
+set
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/set
 set
 -
 
@@ -59,6 +81,8 @@ Lexer.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.h
 Parser.h
 /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.h
+DataLog.h
+/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/DataLog.h
 fstream
 -
 sstream

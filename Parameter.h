@@ -21,5 +21,10 @@ public:
     void ParameterToString() {
         cout << stringOrId;
     }
+
+    bool isString() {
+        if(this->stringOrId.at(0) =='\'' ) {return true;}
+        else {return false;}
+    }
 };
 #endif //CS236MAIN_PARAMETER_H

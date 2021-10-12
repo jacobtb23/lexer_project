@@ -103,10 +103,19 @@
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/DataLog.h">
 			<Option target="CS236project_again"/>
 		</Unit>
+		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Database.h">
+			<Option target="CS236project_again"/>
+		</Unit>
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/FactsAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
+		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Header.h">
+			<Option target="CS236project_again"/>
+		</Unit>
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/IdAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Interpreter.h">
 			<Option target="CS236project_again"/>
 		</Unit>
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/LeftParenAutomaton.h">
@@ -145,6 +154,9 @@
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/QuestionMarkAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
+		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Relation.h">
+			<Option target="CS236project_again"/>
+		</Unit>
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/RightParenAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
@@ -164,6 +176,9 @@
 			<Option target="CS236project_again"/>
 		</Unit>
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Tuple.h">
 			<Option target="CS236project_again"/>
 		</Unit>
 		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/UnterminatedBlockCommentAutomaton.h">
