@@ -12,5 +12,8 @@ public:
     Database() {};
     ~Database() {};
 
+    void addRelation(string relationName,Relation newRelation){
+        this->DataBaseMap.insert({relationName, newRelation});
+    }
 };
 #endif //CS236PROJECT_AGAIN_DATABASE_H

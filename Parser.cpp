@@ -30,7 +30,7 @@ Parser::~Parser() {
     rulesVector.clear();
     domainSet.clear();
 
-    //delete datalog here.
+    //data
 }
 
 void Parser::ParseSyntax(vector<Token*> tokens) {

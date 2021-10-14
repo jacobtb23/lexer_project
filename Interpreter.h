@@ -16,7 +16,10 @@ private:
     Database databaseObject; // Is this where we put the relations and map them to names?
 public:
     Interpreter();
-    ~Interpreter();
+    ~Interpreter() {
+        //delete stuff
+        //delete DB and headers and datalog object?
+    };
 
     Interpreter(DataLog* dataLogObject){
         this->dataLogObject = dataLogObject;

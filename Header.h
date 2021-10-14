@@ -10,6 +10,7 @@ private:
 public:
     Header(){}
     ~Header(){}
+    
     Header(vector<Parameter*> attributes) {
         for (unsigned int i = 0; i < attributes.size(); i++) {
             this->attributes.push_back(attributes.at(i)->getStringOrID());

@@ -24,8 +24,12 @@ void Interpreter::runInterpreter() {
         newRelation = Relation(relationName, newHeader);
         cout << "";
 
+        databaseObject.addRelation(relationName, newRelation);
         //add new relation to database map, then add tuples.
         //Should the DB be a pointer?
+        //.insert({key,value})
     }
+
+    cout << "";
 }
 //Relation* Interpreter::evaluatePredicate(const Predicate& p) --> Strongly recommended.
