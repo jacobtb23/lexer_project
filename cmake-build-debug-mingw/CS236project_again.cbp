@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CS236project_again"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CS236project_again">
+				<Option output="C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/CS236project_again.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 CS236project_again"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CS236project_again/fast">
+				<Option output="C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/CS236project_again.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 CS236project_again/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/jacob/CS236Projects/CS236project-again/cmake-build-debug-mingw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/AddAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Automaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/BlockCommentAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/ColonDashAutomaton.cpp">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/ColonDashAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/CommaAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/DataLog.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Database.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/FactsAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Header.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/IdAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Interpreter.cpp">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Interpreter.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/LeftParenAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Lexer.cpp">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Lexer.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/LineCommentAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/MultiplyAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Parameter.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Parser.cpp">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Parser.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/PeriodAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Predicate.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/QueriesAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/QuestionMarkAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Relation.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/RightParenAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Rule.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/RulesAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/SchemesAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/StringsAutomata.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Token.cpp">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Token.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/Tuple.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/UnterminatedBlockCommentAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/UnterminatedStringAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/main.cpp">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="C:/Users/jacob/CS236Projects/CS236project-again/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

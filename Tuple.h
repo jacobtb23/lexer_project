@@ -15,6 +15,5 @@ public:
         //Compare this-> tuple to other secondTuple
         return values < secondTuple.values; //
     }
-
 };
 #endif //CS236PROJECT_AGAIN_TUPLE_H

@@ -2,6 +2,7 @@
 #include "Parameter.h"
 #include "Predicate.h"
 #include "DataLog.h"
+#include "Interpreter.h"
 #include <iostream>
 using namespace std;
 
@@ -27,9 +28,9 @@ Parser::~Parser() {
         delete deletePointer;
     }
     rulesVector.clear();
-
     domainSet.clear();
 
+    //delete datalog here.
 }
 
 void Parser::ParseSyntax(vector<Token*> tokens) {
@@ -173,9 +174,12 @@ void Parser::DatalogProgram(vector<Token*> tokens) {
         cout << setItem;
         domainIterator++;
     }
+
     cout << endl;
     DataLog *dataLogObj = new DataLog(schemeVector,factsVector,queriesVector, rulesVector, domainSet);
-    //Start lab 3 here? And delete?
+
+    Interpreter *interpreterObject = new Interpreter(dataLogObj); //get help here.
+    interpreterObject->runInterpreter();
 }
 
 void Parser::SchemeList(vector<Token*> tokens) {

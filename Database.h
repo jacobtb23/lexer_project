@@ -6,11 +6,11 @@ using namespace std;
 
 class Database {
 private:
-    //map from name "string" to relation...
+    //map from name "string" to relation... We do this because we want to look up relations by name.
+    map<string, Relation> DataBaseMap;
 public:
-    Database(){}
-    ~Database(){}
-private:
-    //map from name "string" to relation...
+    Database() {};
+    ~Database() {};
+
 };
 #endif //CS236PROJECT_AGAIN_DATABASE_H

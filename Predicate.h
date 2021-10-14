@@ -37,5 +37,13 @@ public:
         }
         cout << ")";
     }
+
+    string returnPredicateID(){
+        return PredicateId;
+    }
+
+    vector<Parameter*> returnParameterVector(){
+        return parameterVector;
+    }
 };
 #endif //CS236PROJECT_AGAIN_PREDICATE_H

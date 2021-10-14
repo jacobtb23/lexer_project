@@ -3,27 +3,40 @@
 #include <set>
 #include <vector>
 #include "Tuple.h"
+#include "Header.h"
 using namespace std;
 
 class Relation {
 private:
-    set<Tuple*> associatedTuples;
+    set<Tuple> rows;
+    string relationName;
+    Header* relationHeader;
+
 public:
     Relation(){}
     ~Relation(){}
 
+    Relation(string relationName, Header* relationHeader) {
+        this->relationName = relationName;
+        this->relationHeader = relationHeader;
+    }
+
+    void addTuple() {
+
+    };
+
     //The methods select, project, rename all return a new Relation object.
-    Relation selectII(){
+    Relation selectII() {
         //relation columns to select on same values...
     }
-    Relation selectIV(){
+    Relation selectIV() {
         //relation column and value to select...
     }
-    Relation project(vector<int> columns){ //pass in a vector of columns for reordering capability
+    Relation project(vector<int> columns) { //pass in a vector of column indices for reordering capability
         //the columns to keep...
         //Note that the list of indices given to project specifies the new order of the columns in the new relation it returns.
     }
-    Relation rename(){
+    Relation rename(vector<string> names) {
         //defines the new header...
     }
 
