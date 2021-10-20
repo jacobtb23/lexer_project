@@ -4,11 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/ColonDashAutomaton.cpp" "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o"
-  "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.cpp" "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles/CS236project_again.dir/Lexer.cpp.o"
-  "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.cpp" "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles/CS236project_again.dir/Parser.cpp.o"
-  "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.cpp" "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles/CS236project_again.dir/Token.cpp.o"
-  "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/main.cpp" "/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles/CS236project_again.dir/main.cpp.o"
+  "/users/guest/b/barnumj/project3/ColonDashAutomaton.cpp" "/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o"
+  "/users/guest/b/barnumj/project3/Interpreter.cpp" "/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles/CS236project_again.dir/Interpreter.cpp.o"
+  "/users/guest/b/barnumj/project3/Lexer.cpp" "/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles/CS236project_again.dir/Lexer.cpp.o"
+  "/users/guest/b/barnumj/project3/Parser.cpp" "/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles/CS236project_again.dir/Parser.cpp.o"
+  "/users/guest/b/barnumj/project3/Token.cpp" "/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles/CS236project_again.dir/Token.cpp.o"
+  "/users/guest/b/barnumj/project3/main.cpp" "/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles/CS236project_again.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

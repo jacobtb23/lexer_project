@@ -16,5 +16,14 @@ public:
             this->attributes.push_back(attributes.at(i)->getStringOrID());
         }
     }
+
+    void toString() {
+        cout << "{";
+        for(string it : attributes){
+            cout << it;
+        }
+        cout << "}";
+        cout << endl;
+    }
 };
 #endif //CS236PROJECT_AGAIN_HEADER_H

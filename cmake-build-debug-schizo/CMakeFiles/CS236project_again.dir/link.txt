@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/CS236project_again.dir/main.cpp.o CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o CMakeFiles/CS236project_again.dir/Lexer.cpp.o CMakeFiles/CS236project_again.dir/Token.cpp.o CMakeFiles/CS236project_again.dir/Parser.cpp.o  -o CS236project_again 

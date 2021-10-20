@@ -3,6 +3,7 @@
 #include <set>
 #include <vector>
 #include "Tuple.h"
+#include <iostream>
 #include "Header.h"
 using namespace std;
 
@@ -21,9 +22,19 @@ public:
         this->relationHeader = relationHeader;
     }
 
-    void addTuple() {
-
+    bool addTuple(Tuple tupleToAdd) {
+        return rows.insert(tupleToAdd).second;
     };
+
+    void printRelationRows() {
+        for (Tuple it : rows) {
+            it.toString();
+        }
+    }
+
+    void printHeader() {
+        relationHeader->toString();
+    }
 
     //The methods select, project, rename all return a new Relation object.
     Relation selectII() {

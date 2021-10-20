@@ -8,8 +8,25 @@ private:
     vector<string> values; //Pointers?
 
 public:
-    Tuple(){}
+    Tuple();
     ~Tuple(){}
+
+    Tuple(vector<string> values) {
+        for(unsigned int i = 0; i < values.size(); i++){
+            this->values.push_back(values.at(i));
+        }
+    }
+
+    void toString() {
+        cout << "(";
+        string output = "";
+        for(string it : values) {
+            output = output + it + ",";
+        }
+        output.pop_back();
+        output = output + ")";
+        cout << output << endl;
+    }
 
     bool operator< (const Tuple & secondTuple) const {
         //Compare this-> tuple to other secondTuple

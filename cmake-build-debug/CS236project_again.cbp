@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug"/>
+				<Option working_dir="/users/guest/b/barnumj/project3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug"/>
+				<Option working_dir="/users/guest/b/barnumj/project3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug"/>
+				<Option working_dir="/users/guest/b/barnumj/project3/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CS236project_again">
-				<Option output="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CS236project_again" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug"/>
+				<Option output="/users/guest/b/barnumj/project3/cmake-build-debug/CS236project_again" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/guest/b/barnumj/project3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 CS236project_again"/>
-					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 CS236project_again"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CS236project_again/fast">
-				<Option output="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CS236project_again" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug"/>
+				<Option output="/users/guest/b/barnumj/project3/cmake-build-debug/CS236project_again" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/guest/b/barnumj/project3/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,122 +75,125 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 CS236project_again/fast"/>
-					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 CS236project_again/fast"/>
+					<CompileFile command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j20 -f &quot;/users/guest/b/barnumj/project3/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/AddAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/AddAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Automaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Automaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/BlockCommentAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/BlockCommentAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/ColonDashAutomaton.cpp">
+		<Unit filename="/users/guest/b/barnumj/project3/ColonDashAutomaton.cpp">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/ColonDashAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/ColonDashAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/CommaAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/CommaAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/DataLog.h">
+		<Unit filename="/users/guest/b/barnumj/project3/DataLog.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Database.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Database.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/FactsAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/FactsAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Header.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Header.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/IdAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/IdAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Interpreter.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Interpreter.cpp">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/LeftParenAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Interpreter.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.cpp">
+		<Unit filename="/users/guest/b/barnumj/project3/LeftParenAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Lexer.cpp">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/LineCommentAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Lexer.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/MultiplyAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/LineCommentAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parameter.h">
+		<Unit filename="/users/guest/b/barnumj/project3/MultiplyAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.cpp">
+		<Unit filename="/users/guest/b/barnumj/project3/Parameter.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Parser.cpp">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/PeriodAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Parser.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Predicate.h">
+		<Unit filename="/users/guest/b/barnumj/project3/PeriodAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/QueriesAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Predicate.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/QuestionMarkAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/QueriesAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Relation.h">
+		<Unit filename="/users/guest/b/barnumj/project3/QuestionMarkAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/RightParenAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Relation.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Rule.h">
+		<Unit filename="/users/guest/b/barnumj/project3/RightParenAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/RulesAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Rule.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/SchemesAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/RulesAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/StringsAutomata.h">
+		<Unit filename="/users/guest/b/barnumj/project3/SchemesAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.cpp">
+		<Unit filename="/users/guest/b/barnumj/project3/StringsAutomata.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Token.cpp">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Tuple.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Token.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/UnterminatedBlockCommentAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/Tuple.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/UnterminatedStringAutomaton.h">
+		<Unit filename="/users/guest/b/barnumj/project3/UnterminatedBlockCommentAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/main.cpp">
+		<Unit filename="/users/guest/b/barnumj/project3/UnterminatedStringAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
-		<Unit filename="/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/CMakeLists.txt">
+		<Unit filename="/users/guest/b/barnumj/project3/main.cpp">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="/users/guest/b/barnumj/project3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

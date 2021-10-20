@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again
+CMAKE_SOURCE_DIR = /users/guest/b/barnumj/project3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug
+CMAKE_BINARY_DIR = /users/guest/b/barnumj/project3/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CS236project_again.dir/depend.make
@@ -59,68 +59,81 @@ include CMakeFiles/CS236project_again.dir/flags.make
 
 CMakeFiles/CS236project_again.dir/main.cpp.o: CMakeFiles/CS236project_again.dir/flags.make
 CMakeFiles/CS236project_again.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CS236project_again.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/main.cpp.o -c /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CS236project_again.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/main.cpp.o -c /users/guest/b/barnumj/project3/main.cpp
 
 CMakeFiles/CS236project_again.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CS236project_again.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/main.cpp > CMakeFiles/CS236project_again.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/project3/main.cpp > CMakeFiles/CS236project_again.dir/main.cpp.i
 
 CMakeFiles/CS236project_again.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CS236project_again.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/main.cpp -o CMakeFiles/CS236project_again.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/project3/main.cpp -o CMakeFiles/CS236project_again.dir/main.cpp.s
 
 CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o: CMakeFiles/CS236project_again.dir/flags.make
 CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o: ../ColonDashAutomaton.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o -c /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/ColonDashAutomaton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o -c /users/guest/b/barnumj/project3/ColonDashAutomaton.cpp
 
 CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/ColonDashAutomaton.cpp > CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/project3/ColonDashAutomaton.cpp > CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.i
 
 CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/ColonDashAutomaton.cpp -o CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/project3/ColonDashAutomaton.cpp -o CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.s
 
 CMakeFiles/CS236project_again.dir/Lexer.cpp.o: CMakeFiles/CS236project_again.dir/flags.make
 CMakeFiles/CS236project_again.dir/Lexer.cpp.o: ../Lexer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CS236project_again.dir/Lexer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/Lexer.cpp.o -c /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CS236project_again.dir/Lexer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/Lexer.cpp.o -c /users/guest/b/barnumj/project3/Lexer.cpp
 
 CMakeFiles/CS236project_again.dir/Lexer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CS236project_again.dir/Lexer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.cpp > CMakeFiles/CS236project_again.dir/Lexer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/project3/Lexer.cpp > CMakeFiles/CS236project_again.dir/Lexer.cpp.i
 
 CMakeFiles/CS236project_again.dir/Lexer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CS236project_again.dir/Lexer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Lexer.cpp -o CMakeFiles/CS236project_again.dir/Lexer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/project3/Lexer.cpp -o CMakeFiles/CS236project_again.dir/Lexer.cpp.s
 
 CMakeFiles/CS236project_again.dir/Token.cpp.o: CMakeFiles/CS236project_again.dir/flags.make
 CMakeFiles/CS236project_again.dir/Token.cpp.o: ../Token.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CS236project_again.dir/Token.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/Token.cpp.o -c /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CS236project_again.dir/Token.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/Token.cpp.o -c /users/guest/b/barnumj/project3/Token.cpp
 
 CMakeFiles/CS236project_again.dir/Token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CS236project_again.dir/Token.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.cpp > CMakeFiles/CS236project_again.dir/Token.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/project3/Token.cpp > CMakeFiles/CS236project_again.dir/Token.cpp.i
 
 CMakeFiles/CS236project_again.dir/Token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CS236project_again.dir/Token.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Token.cpp -o CMakeFiles/CS236project_again.dir/Token.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/project3/Token.cpp -o CMakeFiles/CS236project_again.dir/Token.cpp.s
 
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: CMakeFiles/CS236project_again.dir/flags.make
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CS236project_again.dir/Parser.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/Parser.cpp.o -c /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CS236project_again.dir/Parser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/Parser.cpp.o -c /users/guest/b/barnumj/project3/Parser.cpp
 
 CMakeFiles/CS236project_again.dir/Parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CS236project_again.dir/Parser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.cpp > CMakeFiles/CS236project_again.dir/Parser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/project3/Parser.cpp > CMakeFiles/CS236project_again.dir/Parser.cpp.i
 
 CMakeFiles/CS236project_again.dir/Parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CS236project_again.dir/Parser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/Parser.cpp -o CMakeFiles/CS236project_again.dir/Parser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/project3/Parser.cpp -o CMakeFiles/CS236project_again.dir/Parser.cpp.s
+
+CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: CMakeFiles/CS236project_again.dir/flags.make
+CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Interpreter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CS236project_again.dir/Interpreter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CS236project_again.dir/Interpreter.cpp.o -c /users/guest/b/barnumj/project3/Interpreter.cpp
+
+CMakeFiles/CS236project_again.dir/Interpreter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CS236project_again.dir/Interpreter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /users/guest/b/barnumj/project3/Interpreter.cpp > CMakeFiles/CS236project_again.dir/Interpreter.cpp.i
+
+CMakeFiles/CS236project_again.dir/Interpreter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CS236project_again.dir/Interpreter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /users/guest/b/barnumj/project3/Interpreter.cpp -o CMakeFiles/CS236project_again.dir/Interpreter.cpp.s
 
 # Object files for target CS236project_again
 CS236project_again_OBJECTS = \
@@ -128,7 +141,8 @@ CS236project_again_OBJECTS = \
 "CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o" \
 "CMakeFiles/CS236project_again.dir/Lexer.cpp.o" \
 "CMakeFiles/CS236project_again.dir/Token.cpp.o" \
-"CMakeFiles/CS236project_again.dir/Parser.cpp.o"
+"CMakeFiles/CS236project_again.dir/Parser.cpp.o" \
+"CMakeFiles/CS236project_again.dir/Interpreter.cpp.o"
 
 # External object files for target CS236project_again
 CS236project_again_EXTERNAL_OBJECTS =
@@ -138,9 +152,10 @@ CS236project_again: CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o
 CS236project_again: CMakeFiles/CS236project_again.dir/Lexer.cpp.o
 CS236project_again: CMakeFiles/CS236project_again.dir/Token.cpp.o
 CS236project_again: CMakeFiles/CS236project_again.dir/Parser.cpp.o
+CS236project_again: CMakeFiles/CS236project_again.dir/Interpreter.cpp.o
 CS236project_again: CMakeFiles/CS236project_again.dir/build.make
 CS236project_again: CMakeFiles/CS236project_again.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CS236project_again"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable CS236project_again"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CS236project_again.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +168,6 @@ CMakeFiles/CS236project_again.dir/clean:
 .PHONY : CMakeFiles/CS236project_again.dir/clean
 
 CMakeFiles/CS236project_again.dir/depend:
-	cd /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles/CS236project_again.dir/DependInfo.cmake --color=$(COLOR)
+	cd /users/guest/b/barnumj/project3/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /users/guest/b/barnumj/project3 /users/guest/b/barnumj/project3 /users/guest/b/barnumj/project3/cmake-build-debug /users/guest/b/barnumj/project3/cmake-build-debug /users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles/CS236project_again.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/CS236project_again.dir/depend
 

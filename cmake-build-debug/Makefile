@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again
+CMAKE_SOURCE_DIR = /users/guest/b/barnumj/project3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug
+CMAKE_BINARY_DIR = /users/guest/b/barnumj/project3/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles /users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /users/guest/b/barnumj/users/guest/b/barnumj/CS236project-again/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /users/guest/b/barnumj/project3/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,6 +149,33 @@ ColonDashAutomaton.s: ColonDashAutomaton.cpp.s
 ColonDashAutomaton.cpp.s:
 	$(MAKE) -f CMakeFiles/CS236project_again.dir/build.make CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.s
 .PHONY : ColonDashAutomaton.cpp.s
+
+Interpreter.o: Interpreter.cpp.o
+
+.PHONY : Interpreter.o
+
+# target to build an object file
+Interpreter.cpp.o:
+	$(MAKE) -f CMakeFiles/CS236project_again.dir/build.make CMakeFiles/CS236project_again.dir/Interpreter.cpp.o
+.PHONY : Interpreter.cpp.o
+
+Interpreter.i: Interpreter.cpp.i
+
+.PHONY : Interpreter.i
+
+# target to preprocess a source file
+Interpreter.cpp.i:
+	$(MAKE) -f CMakeFiles/CS236project_again.dir/build.make CMakeFiles/CS236project_again.dir/Interpreter.cpp.i
+.PHONY : Interpreter.cpp.i
+
+Interpreter.s: Interpreter.cpp.s
+
+.PHONY : Interpreter.s
+
+# target to generate assembly for a file
+Interpreter.cpp.s:
+	$(MAKE) -f CMakeFiles/CS236project_again.dir/build.make CMakeFiles/CS236project_again.dir/Interpreter.cpp.s
+.PHONY : Interpreter.cpp.s
 
 Lexer.o: Lexer.cpp.o
 
@@ -270,6 +297,9 @@ help:
 	@echo "... ColonDashAutomaton.o"
 	@echo "... ColonDashAutomaton.i"
 	@echo "... ColonDashAutomaton.s"
+	@echo "... Interpreter.o"
+	@echo "... Interpreter.i"
+	@echo "... Interpreter.s"
 	@echo "... Lexer.o"
 	@echo "... Lexer.i"
 	@echo "... Lexer.s"

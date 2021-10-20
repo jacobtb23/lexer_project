@@ -2,6 +2,7 @@
 #include "DataLog.h"
 #include "Database.h"
 #include "Relation.h"
+#include "Tuple.h"
 #include "Header.h"
 #include <iostream>
 #include "Predicate.h"
@@ -25,11 +26,25 @@ void Interpreter::runInterpreter() {
         cout << "";
 
         databaseObject.addRelation(relationName, newRelation);
-        //add new relation to database map, then add tuples.
-        //Should the DB be a pointer?
-        //.insert({key,value})
     }
 
-    cout << "";
+    //add tuples to each relation where schemes and fact name matches.
+    for (unsigned int i = 0; i < dataLogObject->getFacts().size(); i++) {
+        string factName;
+        vector<string> parameterVector;
+        //Tuple newTuple;
+
+        factName = dataLogObject->getFacts().at(i)->returnPredicateID();
+
+        for(unsigned int j = 0; j < dataLogObject->getFacts().at(i)->returnParameterVector().size(); j++) {
+            parameterVector.push_back(dataLogObject->getFacts().at(i)->returnParameterVector().at(j)->getStringOrID());
+        }
+
+        Tuple newTuple = Tuple(parameterVector);
+        databaseObject.addTupleToRelation(factName, newTuple);
+    }
+    databaseObject.toString();
 }
 //Relation* Interpreter::evaluatePredicate(const Predicate& p) --> Strongly recommended.
+
+

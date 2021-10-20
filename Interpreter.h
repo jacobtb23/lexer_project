@@ -26,6 +26,7 @@ public:
     }
 
     void runInterpreter();
+
 };
 
 #endif //CS236PROJECT_AGAIN_INTERPRETER_H
