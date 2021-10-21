@@ -17,6 +17,10 @@ public:
         }
     }
 
+    vector<string> returnAttributes() {
+        return attributes;
+    }
+
     void toString() {
         cout << "{";
         for(string it : attributes){

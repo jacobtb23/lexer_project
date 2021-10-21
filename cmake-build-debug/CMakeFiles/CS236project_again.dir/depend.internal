@@ -7,7 +7,18 @@ CMakeFiles/CS236project_again.dir/ColonDashAutomaton.cpp.o
  /users/guest/b/barnumj/project3/ColonDashAutomaton.h
  /users/guest/b/barnumj/project3/Token.h
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o
+ /users/guest/b/barnumj/project3/DataLog.h
+ /users/guest/b/barnumj/project3/Database.h
+ /users/guest/b/barnumj/project3/Header.h
  /users/guest/b/barnumj/project3/Interpreter.cpp
+ /users/guest/b/barnumj/project3/Interpreter.h
+ /users/guest/b/barnumj/project3/Parameter.h
+ /users/guest/b/barnumj/project3/Parser.h
+ /users/guest/b/barnumj/project3/Predicate.h
+ /users/guest/b/barnumj/project3/Relation.h
+ /users/guest/b/barnumj/project3/Rule.h
+ /users/guest/b/barnumj/project3/Token.h
+ /users/guest/b/barnumj/project3/Tuple.h
 CMakeFiles/CS236project_again.dir/Lexer.cpp.o
  /users/guest/b/barnumj/project3/AddAutomaton.h
  /users/guest/b/barnumj/project3/Automaton.h

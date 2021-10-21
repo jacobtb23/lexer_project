@@ -14,11 +14,24 @@ class Interpreter{
 private:
     DataLog* dataLogObject; //Pointers?
     Database databaseObject; // Is this where we put the relations and map them to names?
+
+    vector<Header*> deleteHeaders;
+    vector<Relation*> deleteRelations;
+
 public:
     Interpreter();
     ~Interpreter() {
         //delete stuff
         //delete DB and headers and datalog object?
+        for (Relation* it : deleteRelations){
+            delete it;
+        }
+        deleteRelations.clear();
+
+        for (Header* it : deleteHeaders){
+            delete it;
+        }
+        deleteHeaders.clear();
     };
 
     Interpreter(DataLog* dataLogObject){

@@ -180,6 +180,8 @@ void Parser::DatalogProgram(vector<Token*> tokens) {
 
     Interpreter *interpreterObject = new Interpreter(dataLogObj); //get help here.
     interpreterObject->runInterpreter();
+
+    delete interpreterObject;
 }
 
 void Parser::SchemeList(vector<Token*> tokens) {
