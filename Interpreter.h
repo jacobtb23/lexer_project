@@ -39,6 +39,7 @@ public:
     }
 
     void runInterpreter();
+    Relation* evaluateQuery(Predicate* queryPredicate);
 
 };
 

@@ -180,6 +180,10 @@ void Parser::DatalogProgram(vector<Token*> tokens) {
 
     Interpreter *interpreterObject = new Interpreter(dataLogObj); //get help here.
     interpreterObject->runInterpreter();
+    for(unsigned int i = 0; i < queriesVector.size(); i++) {
+        Relation* evaluatedQuery = interpreterObject->evaluateQuery(queriesVector.at(i));
+        //tostring here.
+    }
 
     delete interpreterObject;
 }

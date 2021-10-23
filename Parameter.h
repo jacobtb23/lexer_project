@@ -26,7 +26,7 @@ public:
         return stringOrId;
     }
 
-    bool isString() { // This is used in the project 3 algorithm. Get further help.
+    bool isConstant() { // This is used in the project 3 algorithm. Get further help.
         if(this->stringOrId.at(0) =='\'' ) {return true;}
         else {return false;}
     }

@@ -31,6 +31,15 @@ public:
         }
     }
 
+    Relation* findMatch(string queryName) {
+        for(auto it = DataBaseMap.begin(); it != DataBaseMap.cend(); it++) {
+            if(it->first == queryName){
+                return &it->second;
+            }
+        }
+        cout << "No match found";
+    }
+
 
 };
 #endif //CS236PROJECT_AGAIN_DATABASE_H
