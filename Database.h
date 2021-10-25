@@ -37,6 +37,7 @@ public:
                 return &it->second;
             }
         }
+        return nullptr;
         cout << "No match found";
     }
 

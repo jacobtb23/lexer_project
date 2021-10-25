@@ -18,6 +18,10 @@ Relation* Interpreter::evaluateQuery(Predicate* queryPredicate) {
     vector<int> indices;
     vector<string> newNames;
 
+    //print out query here
+    queryPredicate->PredicateToString();
+    cout  << "?";
+
     for(unsigned int i = 0; i < queryPredicate->returnParameterVector().size(); i++){
         if(queryPredicate->returnParameterVector().at(i)->isConstant()) {
             matchedRelation = matchedRelation->selectIV(i,queryPredicate->returnParameterVector().at(i)->getStringOrID());
@@ -43,15 +47,23 @@ Relation* Interpreter::evaluateQuery(Predicate* queryPredicate) {
 
     matchedRelation = matchedRelation->project(indices);
     matchedRelation = matchedRelation->rename(newNames);
+    if (matchedRelation->tuplesPresent() == false) {
+        cout << " Yes(";
+        matchedRelation->printSetSize();
+        cout << ")" << endl;
+        if(matchedRelation->returnHeader()->returnAttributes().empty() == true) {
+            //Do nothing
+        }
+        else {matchedRelation->printFinalRelation();}
+     }
+    else {cout << " No" << endl;}
+
+
 
     return matchedRelation;
 }
 
 void Interpreter::runInterpreter() {
-    //do stuff...
-    cout << endl;
-    cout << "Testing Interpreter:" << endl;
-    cout << "************************************************" << endl;
 
     //create relation for each scheme object in the schemeVector...
     for (unsigned int i = 0; i < dataLogObject->getSchemes().size(); i++) {
@@ -84,7 +96,7 @@ void Interpreter::runInterpreter() {
         databaseObject.addTupleToRelation(factName, newTuple);
     }
 
-    databaseObject.toString();
+    //databaseObject.toString();
 
 
     //Relation* Interpreter::evaluatePredicate(const Predicate& p) --> Strongly recommended.

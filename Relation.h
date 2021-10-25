@@ -36,8 +36,35 @@ public:
         relationHeader->toString();
     }
 
+    Header* returnHeader() {
+        return relationHeader;
+    }
+
     void printRelationName() {
         cout << relationName;
+    }
+
+    bool tuplesPresent() {
+        return rows.empty();
+    }
+
+    void printSetSize() {
+        cout << rows.size();
+    }
+
+    void printFinalRelation (){
+        for (Tuple it : rows) {
+            cout << "  ";
+            for (unsigned int j = 0; j < it.returnValues().size(); j++) {
+                cout << relationHeader->returnAttributes().at(j) << "=";
+                if (j == it.returnValues().size() - 1){
+                    cout << it.returnValues().at(j);
+                }
+                else {cout << it.returnValues().at(j) << ", ";}
+            }
+            cout << endl;
+        }
+
     }
 
     //The methods select, project, rename all return a new Relation object.
