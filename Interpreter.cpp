@@ -8,7 +8,6 @@
 #include <iostream>
 #include "Predicate.h"
 #include "Interpreter.h"
-#include <stdexcept>
 
 Relation* Interpreter::evaluateQuery(Predicate* queryPredicate) {
     string queryName;
@@ -58,13 +57,31 @@ Relation* Interpreter::evaluateQuery(Predicate* queryPredicate) {
      }
     else {cout << " No" << endl;}
 
-
-
     return matchedRelation;
 }
+void Interpreter::addRulesToDB() {
+    vector<Relation*>rightHandSidePredicates;
 
-void Interpreter::runInterpreter() {
+    //Evaluate RHS predicates
+    for (unsigned int i = 0; i < dataLogObject->getRules().size(); i++) {
+        for (Predicate* it : dataLogObject->getRules().at(i)->returnRightSidePredicates()) {
+            rightHandSidePredicates.push_back(evaluateQuery(it));
+        }
 
+        //Join Evaluated RHS queries.
+        Relation* joinedPredicate;
+        joinedPredicate = rightHandSidePredicates.at(0);
+        if (rightHandSidePredicates.size() > 1) { //If not empty
+            for (unsigned int i = 0; i < rightHandSidePredicates.size() - 1; i++) {
+                joinedPredicate = joinedPredicate->join(rightHandSidePredicates.at(i+1)); //
+            } //set 1st element = to start of vector and call join on it passing the next relation as a parameter.
+        }
+        else {} //use single RHS predicate as result.
+    }
+
+
+}
+void Interpreter::addSchemes() {
     //create relation for each scheme object in the schemeVector...
     for (unsigned int i = 0; i < dataLogObject->getSchemes().size(); i++) {
         Header* newHeader;
@@ -79,7 +96,8 @@ void Interpreter::runInterpreter() {
 
         databaseObject.addRelation(relationName, newRelation);
     }
-
+}
+void Interpreter::addFacts() {
     //add tuples to each relation where schemes and fact name matches.
     for (unsigned int i = 0; i < dataLogObject->getFacts().size(); i++) {
         string factName;
@@ -95,75 +113,94 @@ void Interpreter::runInterpreter() {
         Tuple newTuple = Tuple(parameterVector);
         databaseObject.addTupleToRelation(factName, newTuple);
     }
-
+}
+void Interpreter::runInterpreter() {
+    addSchemes();
+    addFacts();
+    //addRulesToDB();
     //databaseObject.toString();
 
-
-    //Relation* Interpreter::evaluatePredicate(const Predicate& p) --> Strongly recommended.
-
     //Test Relation
-//    vector<Parameter*> attributes;
-//
-//    vector<string> testValues;
-//    testValues.push_back("\'A\'");
-//    testValues.push_back("\'C\'");
-//    testValues.push_back("\'Z\'");
-//
-//
-//    vector<string> testValues1;
-//    testValues1.push_back("\'A\'");
-//    testValues1.push_back("\'A\'");
-//    testValues1.push_back("\'C\'");
-//
-//
-//    vector<string> testValues2;
-//    testValues2.push_back("\'A\'");
-//    testValues2.push_back("\'C\'");
-//    testValues2.push_back("\'P\'");
-//
-//
-//    Tuple testTuple = Tuple(testValues);
-//    Tuple testTuple1 = Tuple(testValues1);
-//    Tuple testTuple2 = Tuple(testValues2);
-//    set<Tuple> testRows;
-//    Header* testHeader;
-//    string testName = "csg";
-//    testHeader = new Header(dataLogObject->getSchemes().at(1)->returnParameterVector());
-//    Relation* testRelation;
-//    testRelation = new Relation(testName,testHeader);
-//    deleteRelations.push_back(testRelation);
-//    vector<int> indices;
-//    indices.push_back(2);
-//    indices.push_back(1);
-//
-//    testRelation->addTuple(testTuple);
-//    testRelation->addTuple(testTuple1);
-//    testRelation->addTuple(testTuple2);
-//
-//    cout << "This is the test relation:" << endl;
-//    testRelation->printRelationName();
-//    cout << endl;
-//    testRelation->printHeader();
-//    testRelation->printRelationRows();
-//    cout << endl << "This is the new relation:" << endl;
-//    testRelation = testRelation->project(indices);
-//    testRelation->printHeader();
-//    cout << endl;
-//    testRelation->printRelationRows();
-//    cout << endl << endl;
-//    vector<string> newHeaderNames;
-//    newHeaderNames.push_back("DONT");
-//    newHeaderNames.push_back("BE");
-//    testRelation = testRelation->rename(newHeaderNames);
-//    testRelation->printHeader();
-//    testRelation->printRelationRows();
-//    testRelation = testRelation->selectIV(0,"\'P\'");
-//    testRelation->printHeader();
-//    testRelation->printRelationRows();
-//    testRelation = testRelation->selectIV(0,"\'A\'");
-//    testRelation->printHeader();
-//    testRelation->printRelationRows();
-    //cout << endl << "***********************************************************";
+
+    vector<string> testValues;
+    testValues.push_back("\'12345\'");
+    testValues.push_back("\'C. Brown\'");
+    testValues.push_back("\'12 Apple St.\'");
+    testValues.push_back("\'555-1234\'");
+
+
+    vector<string> testValues1;
+    testValues1.push_back("\'67890\'");
+    testValues1.push_back("\'L.Van Pelt\'");
+    testValues1.push_back("\'34 Pear Ave.\'");
+    testValues1.push_back("\'555-5678\'");
+
+
+    vector<string> testValues2;
+    testValues2.push_back("\'33333\'");
+    testValues2.push_back("\'Snoopy\'");
+    testValues2.push_back("\'12 Apple St.\'");
+    testValues2.push_back("\'555-1234\'");
+
+
+    Tuple testTuple = Tuple(testValues);
+    Tuple testTuple1 = Tuple(testValues1);
+    Tuple testTuple2 = Tuple(testValues2);
+    set<Tuple> testRows;
+    Header* testHeader;
+    string testName = "snap";
+    testHeader = new Header(dataLogObject->getSchemes().at(0)->returnParameterVector());
+    Relation* testRelation;
+    testRelation = new Relation(testName,testHeader);
+    deleteRelations.push_back(testRelation);
+    vector<int> indices;
+    indices.push_back(2);
+    indices.push_back(1);
+
+    testRelation->addTuple(testTuple);
+    testRelation->addTuple(testTuple1);
+    testRelation->addTuple(testTuple2);
+
+    ////////////////////////////////////////////
+
+    vector<string> moretestValues;
+    moretestValues.push_back("\'CS101\'");
+    moretestValues.push_back("\'12345\'");
+    moretestValues.push_back("\'A\'");
+
+
+    vector<string> moretestValues1;
+    moretestValues1.push_back("\'CS101\'");
+    moretestValues1.push_back("\'67890\'");
+    moretestValues1.push_back("\'B\'");
+
+
+    vector<string> moretestValues2;
+    moretestValues2.push_back("\'EE200\'");
+    moretestValues2.push_back("\'12345\'");
+    moretestValues2.push_back("\'C\'");
+
+
+    Tuple moretestTuple = Tuple(moretestValues);
+    Tuple moretestTuple1 = Tuple(moretestValues1);
+    Tuple moretestTuple2 = Tuple(moretestValues2);
+    set<Tuple> moretestRows;
+    Header* moretestHeader;
+    string moretestName = "csg";
+    moretestHeader = new Header(dataLogObject->getSchemes().at(1)->returnParameterVector());
+    Relation* testRelation2;
+    testRelation2 = new Relation(moretestName,moretestHeader);
+    deleteRelations.push_back(testRelation);
+    vector<int> moreindices;
+    indices.push_back(2);
+    indices.push_back(1);
+
+    testRelation2->addTuple(moretestTuple);
+    testRelation2->addTuple(moretestTuple1);
+    testRelation2->addTuple(moretestTuple2);
+
+    testRelation->join(testRelation2);
+
 }
 
 

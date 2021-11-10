@@ -37,6 +37,9 @@ public:
     set<string> getDomains(){
         return domainSet;
     }
+    vector<Rule*> getRules() {
+        return rulesVector;
+    }
 
 };
 #endif //CS236PROJECT_AGAIN_DATALOG_H

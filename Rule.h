@@ -14,6 +14,14 @@ public:
     Rule(){}
     ~Rule(){}
 
+    Predicate* returnHeadPredicate() {
+        return headPredicate;
+    }
+
+    vector<Predicate*> returnRightSidePredicates() {
+        return rulePredicates;
+    }
+
     Rule(Predicate* headPredicate, vector<Predicate*>rulePredicates) {
         this->headPredicate = headPredicate;
         for(Predicate* i : rulePredicates) {

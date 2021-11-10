@@ -1,14 +1,14 @@
 Schemes:
   snap(S,N,A,P)
-  NameHasID(N,S)
+  csg(C,I,G)
 Facts:
+   csg('CS101','12345','A').
+   csg('CS101','67890','B').
+   csg('EE200','12345','C').
+  snap('12345','C. Brown','12 Apple St.','555-1234').
+  snap('67890','L. Van Pelt','34 Pear Ave.','555-5678').
+  snap('22222','P. Patty','56 Grape Blvd.','555-9999').
+  snap('33333','Snoopy','12 Apple St.','555-1234').
 Rules:
 Queries:
-  HasSameAddress('Snoopy',Who)?
-  HasSameAddress('Snoopy',Who)?
-
-
-
-
-
-
+    snap('33333','Snoopy','12 Apple St.','555-1234')?

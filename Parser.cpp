@@ -29,8 +29,6 @@ Parser::~Parser() {
     }
     rulesVector.clear();
     domainSet.clear();
-
-    //data
 }
 
 void Parser::ParseSyntax(vector<Token*> tokens) {
@@ -176,11 +174,14 @@ void Parser::DatalogProgram(vector<Token*> tokens) {
 //    }
 //
 //    cout << endl;
+
     DataLog *dataLogObj = new DataLog(schemeVector,factsVector,queriesVector, rulesVector, domainSet);
 
+    //Run Interpreter
     Interpreter *interpreterObject = new Interpreter(dataLogObj); //get help here.
     interpreterObject->runInterpreter();
 
+    //Evaluate Queries
     for(unsigned int i = 0; i < queriesVector.size(); i++) {
         interpreterObject->evaluateQuery(queriesVector.at(i));
     }

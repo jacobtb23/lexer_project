@@ -40,6 +40,9 @@ public:
 
     void runInterpreter();
     Relation* evaluateQuery(Predicate* queryPredicate);
+    void addRulesToDB();
+    void addSchemes();
+    void addFacts();
 
 };
 

@@ -43,12 +43,16 @@ Tuple.h
 /users/guest/b/barnumj/project3/Tuple.h
 Header.h
 /users/guest/b/barnumj/project3/Header.h
+map
+-
 iostream
 -
 Predicate.h
 /users/guest/b/barnumj/project3/Predicate.h
 Interpreter.h
 /users/guest/b/barnumj/project3/Interpreter.h
+stdexcept
+-
 
 /users/guest/b/barnumj/project3/Interpreter.h
 vector
@@ -69,6 +73,20 @@ Predicate.h
 /users/guest/b/barnumj/project3/Parameter.h
 vector
 -
+iostream
+-
+
+/users/guest/b/barnumj/project3/Parser.cpp
+Parser.h
+/users/guest/b/barnumj/project3/Parser.h
+Parameter.h
+/users/guest/b/barnumj/project3/Parameter.h
+Predicate.h
+/users/guest/b/barnumj/project3/Predicate.h
+DataLog.h
+/users/guest/b/barnumj/project3/DataLog.h
+Interpreter.h
+/users/guest/b/barnumj/project3/Interpreter.h
 iostream
 -
 
