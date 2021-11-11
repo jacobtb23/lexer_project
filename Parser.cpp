@@ -182,6 +182,8 @@ void Parser::DatalogProgram(vector<Token*> tokens) {
     interpreterObject->runInterpreter();
 
     //Evaluate Queries
+    cout << endl;
+    cout << "Query Evaluation" << endl;
     for(unsigned int i = 0; i < queriesVector.size(); i++) {
         interpreterObject->evaluateQuery(queriesVector.at(i));
     }

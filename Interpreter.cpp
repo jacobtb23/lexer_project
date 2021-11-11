@@ -100,48 +100,54 @@ Relation* Interpreter::evaluateRules(Predicate* queryPredicate) {
 void Interpreter::addRulesToDB() {
     cout << "Rule Evaluation" << endl;
     vector<Relation*>rightHandSidePredicates;
+    bool keepGoing = true;
+    unsigned int count = 0;
 
-    //Evaluate RHS predicates
-    for (unsigned int i = 0; i < dataLogObject->getRules().size(); i++) {
-        dataLogObject->getRules().at(i)->RulesToString();//Print out rule
-        cout << endl;
-        rightHandSidePredicates.clear();
+    while(keepGoing == true) {
+        count++;
+        //Evaluate RHS predicates
+        for (unsigned int i = 0; i < dataLogObject->getRules().size(); i++) {
+            dataLogObject->getRules().at(i)->RulesToString();//Print out rule
+            cout << ".";
+            cout << endl;
+            rightHandSidePredicates.clear();
 
-        //Evaluate RHS Queries and push onto vector
-        for (Predicate* it : dataLogObject->getRules().at(i)->returnRightSidePredicates()) {
-            rightHandSidePredicates.push_back(evaluateRules(it));
-        }
-
-        //Join Evaluated RHS queries.
-        Relation* joinedPredicate;
-        joinedPredicate = rightHandSidePredicates.at(0);
-        if (rightHandSidePredicates.size() > 1) { //If more than 1 RHS predicate exists
-            for (unsigned int j = 0; j < rightHandSidePredicates.size() - 1; j++) { //check this...
-                joinedPredicate = joinedPredicate->join(rightHandSidePredicates.at(j+1)); //
+            //Evaluate RHS Queries and push onto vector
+            for (Predicate *it: dataLogObject->getRules().at(i)->returnRightSidePredicates()) {
+                rightHandSidePredicates.push_back(evaluateRules(it));
             }
-        }
-        else {joinedPredicate = rightHandSidePredicates.at(0);} //use single RHS predicate as result.
 
-        //Project columns according to LHS rule head predicate.
-        vector<int> indices;
-        for (Parameter* it : dataLogObject->getRules().at(i)->returnHeadPredicate()->returnParameterVector()) {
-            for (unsigned int k = 0; k < joinedPredicate->returnHeader()->returnAttributes().size(); k++) {
-                if (it->getStringOrID() == joinedPredicate->returnHeader()->returnAttributes().at(k)) {
-                    indices.push_back(k);
+            //Join Evaluated RHS queries.
+            Relation *joinedPredicate;
+            joinedPredicate = rightHandSidePredicates.at(0);
+            if (rightHandSidePredicates.size() > 1) { //If more than 1 RHS predicate exists
+                for (unsigned int j = 0; j < rightHandSidePredicates.size() - 1; j++) { //check this...
+                    joinedPredicate = joinedPredicate->join(rightHandSidePredicates.at(j + 1)); //
+                }
+            } else { joinedPredicate = rightHandSidePredicates.at(0); } //use single RHS predicate as result.
+
+            //Project columns according to LHS rule head predicate.
+            vector<int> indices;
+            for (Parameter *it: dataLogObject->getRules().at(i)->returnHeadPredicate()->returnParameterVector()) {
+                for (unsigned int k = 0; k < joinedPredicate->returnHeader()->returnAttributes().size(); k++) {
+                    if (it->getStringOrID() == joinedPredicate->returnHeader()->returnAttributes().at(k)) {
+                        indices.push_back(k);
+                    }
                 }
             }
+            joinedPredicate = joinedPredicate->project(indices);
+
+            //Rename according to head predicate header
+            joinedPredicate = joinedPredicate->rename(dataLogObject->getRules().at(i)->returnHeadPredicate()->returnVectorOfStrings());
+
+            //populate schemes with new facts via union.
+            keepGoing = databaseObject.findMatch(dataLogObject->getRules().at(i)->returnHeadPredicate()->returnPredicateID())->unionOperator(joinedPredicate);
         }
-        joinedPredicate = joinedPredicate->project(indices);
-
-        //Rename according to head predicate header
-        joinedPredicate = joinedPredicate->rename(dataLogObject->getRules().at(i)->returnHeadPredicate()->returnVectorOfStrings());
-
-        //populate schemes with new facts via union.
-        databaseObject.findMatch(dataLogObject->getRules().at(i)->returnHeadPredicate()->returnPredicateID())->unionOperator(joinedPredicate);
-        cout << "";
     }
-    cout << endl << "Schemes populated after ? passes through the Rules."  << endl;
+    cout << endl << "Schemes populated after ";
+    cout << count << " passes through the Rules." << endl; //eventually take out the first endl.
 }
+
 void Interpreter::addSchemes() {
     //create relation for each scheme object in the schemeVector...
     for (unsigned int i = 0; i < dataLogObject->getSchemes().size(); i++) {
@@ -158,6 +164,7 @@ void Interpreter::addSchemes() {
         databaseObject.addRelation(relationName, newRelation);
     }
 }
+
 void Interpreter::addFacts() {
     //add tuples to each relation where schemes and fact name matches.
     for (unsigned int i = 0; i < dataLogObject->getFacts().size(); i++) {
@@ -175,6 +182,7 @@ void Interpreter::addFacts() {
         databaseObject.addTupleToRelation(factName, newTuple);
     }
 }
+
 void Interpreter::runInterpreter() {
     addSchemes();
     addFacts();
