@@ -67,6 +67,18 @@ public:
 
     }
 
+    void printSingleRelationTuple (Tuple tupleToPrint) {
+        cout << "  ";
+        for (unsigned int j = 0; j < tupleToPrint.returnValues().size(); j++) {
+            cout << relationHeader->returnAttributes().at(j) << "=";
+            if (j == tupleToPrint.returnValues().size() - 1){
+                cout << tupleToPrint.returnValues().at(j);
+            }
+            else {cout << tupleToPrint.returnValues().at(j) << ", ";}
+        }
+        cout << endl;
+    }
+
     //The methods select, project, rename all return a new Relation object.
     Relation* selectIV(int index, string value) {
         //relation column and value to select...
@@ -147,24 +159,33 @@ public:
         return newRelation;
     }
 
-    Relation* unionOperator() {} //bool has changed? -> see help slides
+    bool unionOperator(Relation* joinedResult) {
+        bool hasAddedTuple = false;
+        for (Tuple it : joinedResult->rows) {
+            if(this->rows.insert(it).second == true) {
+                hasAddedTuple = true;
+                printSingleRelationTuple(it);
+            }
+        }
+        return hasAddedTuple;
+    } //bool has changed? -> see help slides
 
     Relation* join(Relation* relationToJoin) {
         //find unique columns vector<int>
         //find matching columns vector<pair of ints>
         Header* combinedHeader;
         vector<pair<int, int>> matchedHeaders;
-        vector<string> uniqueHeaders;
+        vector<int> uniqueHeaders;
 
         matchedHeaders = this->findMatchingHeaders(relationToJoin->returnHeader());
-        uniqueHeaders = this->findUniqueHeaders(relationToJoin->returnHeader());
+        uniqueHeaders = this->findUniqueHeaders(relationToJoin->returnHeader(), matchedHeaders);
         combinedHeader = this->combineHeader(relationToJoin->returnHeader());
         Relation* joinedRelation = new Relation("joinedRelation",combinedHeader);
 
         for (Tuple it : this->rows) {
             for(Tuple it2 : relationToJoin->rows) {
                 if(isJoinable(it,it2,matchedHeaders) == true) {
-                    joinedRelation->addTuple(combineTuples(it, it2, combinedHeader, matchedHeaders));
+                    joinedRelation->addTuple(combineTuples(it, it2, uniqueHeaders));
                 }
             }
         }
@@ -207,49 +228,27 @@ public:
         return isCombinable;
     }
 
-    Tuple combineTuples(Tuple Tuple1, Tuple Tuple2, Header* combinedHeader, vector<pair<int, int>> matchedHeaders) {
-        vector<string> tupleVector;
-
-        for(string it : Tuple1.returnValues()) {
-            tupleVector.push_back(it);
+    Tuple combineTuples(Tuple Tuple1, Tuple Tuple2, vector<int> uniqueHeaders) {
+        vector<string> newTupleVector = Tuple1.returnValues();
+        for(unsigned int i = 0; i < uniqueHeaders.size(); i++) {
+            newTupleVector.push_back(Tuple2.returnValues().at(uniqueHeaders.at(i)));
         }
-
-        if (matchedHeaders.size() == 0) {
-            for (unsigned int i = 0; i < Tuple2.returnValues().size(); i++) {
-                tupleVector.push_back(Tuple2.returnValues().at(i));
-            }
-        }
-        else {
-            for (unsigned int i = 0; i < Tuple2.returnValues().size(); i++) {
-                for (unsigned int j = 0; j < matchedHeaders.size(); j++) {
-                    if ( i != matchedHeaders.at(j).second) {
-                        tupleVector.push_back(Tuple2.returnValues().at(i));
-                    }
-                }
-            }
-        }
-
-        Tuple combinedTuple = Tuple(tupleVector);
+        Tuple combinedTuple = Tuple(newTupleVector);
         return combinedTuple;
+    }
 
-    } //do this like you do the header.
+    vector<int> findUniqueHeaders(Header* headerToCombine, vector<pair<int, int>> matchingHeaders) {
+        vector<int> uniqueHeaders;
 
-    vector<string> findUniqueHeaders(Header* headerToCombine) {
-        vector<string> uniqueHeaders;
-        vector<string> allHeaders = this->returnHeader()->returnAttributes();
         for (unsigned int i = 0; i < headerToCombine->returnAttributes().size(); i++) {
-            allHeaders.push_back(headerToCombine->returnAttributes().at(i));
-        }
-
-        for (unsigned int i = 0; i < allHeaders.size(); i++) {
             unsigned int count = 0;
-            for (unsigned int j = 0; j < allHeaders.size(); j++) {
-                if (allHeaders.at(i) == allHeaders.at(j)) {
+            for (unsigned int j = 0; j < matchingHeaders.size(); j++) {
+                if (i == matchingHeaders.at(j).second) {
                     count++;
                 }
             }
-            if (count == 1) {
-                uniqueHeaders.push_back(allHeaders.at(i));
+            if (count == 0) {
+                uniqueHeaders.push_back(i);
             }
         }
         return uniqueHeaders;
@@ -269,7 +268,6 @@ public:
         }
         return matchedPairs;
     }
-
 
 };
 #endif //CS236PROJECT_AGAIN_RELATION_H

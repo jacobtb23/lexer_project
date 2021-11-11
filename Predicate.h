@@ -45,5 +45,13 @@ public:
     vector<Parameter*> returnParameterVector(){
         return parameterVector;
     }
+
+    vector<string> returnVectorOfStrings() {
+        vector<string> vectorOfStrings;
+        for (Parameter* it : parameterVector) {
+            vectorOfStrings.push_back(it->getStringOrID());
+        }
+        return vectorOfStrings;
+    }
 };
 #endif //CS236PROJECT_AGAIN_PREDICATE_H
