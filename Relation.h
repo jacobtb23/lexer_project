@@ -159,11 +159,11 @@ public:
         return newRelation;
     }
 
-    bool unionOperator(Relation* joinedResult) {
-        bool hasAddedTuple = false;
+    int unionOperator(Relation* joinedResult) {
+        int hasAddedTuple = 0;
         for (Tuple it : joinedResult->rows) {
-            if(this->rows.insert(it).second == true) {
-                hasAddedTuple = true;
+            if(this->rows.insert(it).second) {
+                hasAddedTuple++;
                 printSingleRelationTuple(it);
             }
         }
@@ -174,7 +174,7 @@ public:
         //find unique columns vector<int>
         //find matching columns vector<pair of ints>
         Header* combinedHeader;
-        vector<pair<int, int>> matchedHeaders;
+        vector<pair<unsigned int, unsigned int>> matchedHeaders;
         vector<int> uniqueHeaders;
 
         matchedHeaders = this->findMatchingHeaders(relationToJoin->returnHeader());
@@ -218,7 +218,7 @@ public:
         return newHeader;
     }
 
-    bool isJoinable(Tuple Tuple1, Tuple Tuple2, vector<pair<int, int>> matchedHeaders) {
+    bool isJoinable(Tuple Tuple1, Tuple Tuple2, vector<pair<unsigned int, unsigned int>> matchedHeaders) {
         bool isCombinable = true;
             for (pair<int,int> it : matchedHeaders) {
                 if(Tuple1.returnValues().at(it.first) != Tuple2.returnValues().at(it.second)) {
@@ -237,7 +237,7 @@ public:
         return combinedTuple;
     }
 
-    vector<int> findUniqueHeaders(Header* headerToCombine, vector<pair<int, int>> matchingHeaders) {
+    vector<int> findUniqueHeaders(Header* headerToCombine, vector<pair<unsigned int, unsigned int>> matchingHeaders) {
         vector<int> uniqueHeaders;
 
         for (unsigned int i = 0; i < headerToCombine->returnAttributes().size(); i++) {
@@ -254,8 +254,8 @@ public:
         return uniqueHeaders;
     }
 
-    vector<pair<int, int>> findMatchingHeaders(Header* headerToCompare) {
-        vector<pair<int, int>> matchedPairs;
+    vector<pair<unsigned int, unsigned int>> findMatchingHeaders(Header* headerToCompare) {
+        vector<pair<unsigned int, unsigned int>> matchedPairs;
         pair<int, int> matchingTuple;
         for (unsigned int i = 0; i < this->returnHeader()->returnAttributes().size(); i++) {
             for (unsigned int j = 0; j < headerToCompare->returnAttributes().size(); j++) {

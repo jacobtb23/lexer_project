@@ -100,10 +100,11 @@ Relation* Interpreter::evaluateRules(Predicate* queryPredicate) {
 void Interpreter::addRulesToDB() {
     cout << "Rule Evaluation" << endl;
     vector<Relation*>rightHandSidePredicates;
-    bool keepGoing = true;
+    int continueLoop = 1;
     unsigned int count = 0;
 
-    while(keepGoing == true) {
+    while(continueLoop > 0) {
+        continueLoop = 0;
         count++;
         //Evaluate RHS predicates
         for (unsigned int i = 0; i < dataLogObject->getRules().size(); i++) {
@@ -140,8 +141,8 @@ void Interpreter::addRulesToDB() {
             //Rename according to head predicate header
             joinedPredicate = joinedPredicate->rename(dataLogObject->getRules().at(i)->returnHeadPredicate()->returnVectorOfStrings());
 
-            //populate schemes with new facts via union.
-            keepGoing = databaseObject.findMatch(dataLogObject->getRules().at(i)->returnHeadPredicate()->returnPredicateID())->unionOperator(joinedPredicate);
+            //populate schemes with new facts via union. Something can change it back to true! This needs to be fixed...
+            continueLoop += databaseObject.findMatch(dataLogObject->getRules().at(i)->returnHeadPredicate()->returnPredicateID())->unionOperator(joinedPredicate);
         }
     }
     cout << endl << "Schemes populated after ";
