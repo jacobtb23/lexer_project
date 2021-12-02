@@ -7,6 +7,7 @@
 #include "Header.h"
 #include <iostream>
 #include "Predicate.h"
+#include "graph.h"
 
 using namespace std;
 
@@ -17,6 +18,8 @@ private:
 
     vector<Header*> deleteHeaders;
     vector<Relation*> deleteRelations;
+    graph forwardGraph;
+    graph reversedGraph;
 
 public:
     Interpreter();
@@ -38,12 +41,16 @@ public:
         this->dataLogObject = dataLogObject;
     }
 
-    void runInterpreter();
+
     Relation* evaluateQuery(Predicate* queryPredicate);
     Relation* evaluateRules(Predicate* queryPredicate);
-    void addRulesToDB();
+    void runInterpreter();
     void addSchemes();
     void addFacts();
+    void addRulesToDB();
+    void evaluateRulesOptimized(vector<Rule*> Rules);
+    void createDependencyGraphs(vector<Rule*> Rules);
+
 
 };
 

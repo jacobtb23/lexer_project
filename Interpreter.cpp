@@ -8,6 +8,43 @@
 #include <iostream>
 #include "Predicate.h"
 #include "Interpreter.h"
+#include "graph.h"
+
+//add two graph objects. One for the forward graph and one for the reverse graph. Where does this happen? Is seems like I will have to redo the last lab to do this?
+void Interpreter::addSchemes() {
+    //create relation for each scheme object in the schemeVector...
+    for (unsigned int i = 0; i < dataLogObject->getSchemes().size(); i++) {
+        Header* newHeader;
+        Relation newRelation;
+        string relationName;
+
+        relationName = dataLogObject->getSchemes().at(i)->returnPredicateID();
+        newHeader = new Header(dataLogObject->getSchemes().at(i)->returnParameterVector());
+        deleteHeaders.push_back(newHeader);
+        newRelation = Relation(relationName, newHeader);
+        cout << "";
+
+        databaseObject.addRelation(relationName, newRelation);
+    }
+}
+
+void Interpreter::addFacts() {
+    //add tuples to each relation where schemes and fact name matches.
+    for (unsigned int i = 0; i < dataLogObject->getFacts().size(); i++) {
+        string factName;
+        vector<string> parameterVector;
+        //Tuple newTuple;
+
+        factName = dataLogObject->getFacts().at(i)->returnPredicateID();
+
+        for(unsigned int j = 0; j < dataLogObject->getFacts().at(i)->returnParameterVector().size(); j++) {
+            parameterVector.push_back(dataLogObject->getFacts().at(i)->returnParameterVector().at(j)->getStringOrID());
+        }
+
+        Tuple newTuple = Tuple(parameterVector);
+        databaseObject.addTupleToRelation(factName, newTuple);
+    }
+}
 
 Relation* Interpreter::evaluateQuery(Predicate* queryPredicate) {
     string queryName;
@@ -141,7 +178,7 @@ void Interpreter::addRulesToDB() {
             //Rename according to head predicate header
             joinedPredicate = joinedPredicate->rename(dataLogObject->getRules().at(i)->returnHeadPredicate()->returnVectorOfStrings());
 
-            //populate schemes with new facts via union. Something can change it back to true! This needs to be fixed...
+            //populate schemes with new facts via union.
             continueLoop += databaseObject.findMatch(dataLogObject->getRules().at(i)->returnHeadPredicate()->returnPredicateID())->unionOperator(joinedPredicate);
         }
     }
@@ -149,45 +186,52 @@ void Interpreter::addRulesToDB() {
     cout << count << " passes through the Rules." << endl; //eventually take out the first endl.
 }
 
-void Interpreter::addSchemes() {
-    //create relation for each scheme object in the schemeVector...
-    for (unsigned int i = 0; i < dataLogObject->getSchemes().size(); i++) {
-        Header* newHeader;
-        Relation newRelation;
-        string relationName;
+void Interpreter::evaluateRulesOptimized(vector<Rule*> rulesVector) {
+    //create dependency graphs
+    createDependencyGraphs(rulesVector);
 
-        relationName = dataLogObject->getSchemes().at(i)->returnPredicateID();
-        newHeader = new Header(dataLogObject->getSchemes().at(i)->returnParameterVector());
-        deleteHeaders.push_back(newHeader);
-        newRelation = Relation(relationName, newHeader);
-        cout << "";
-
-        databaseObject.addRelation(relationName, newRelation);
-    }
 }
 
-void Interpreter::addFacts() {
-    //add tuples to each relation where schemes and fact name matches.
-    for (unsigned int i = 0; i < dataLogObject->getFacts().size(); i++) {
-        string factName;
-        vector<string> parameterVector;
-        //Tuple newTuple;
+void Interpreter::createDependencyGraphs(vector<Rule*> rulesVector) {
+    //loop through and create a node for rules then add to them
+        forwardGraph = graph();
+        reversedGraph = graph();
 
-        factName = dataLogObject->getFacts().at(i)->returnPredicateID();
-
-        for(unsigned int j = 0; j < dataLogObject->getFacts().at(i)->returnParameterVector().size(); j++) {
-            parameterVector.push_back(dataLogObject->getFacts().at(i)->returnParameterVector().at(j)->getStringOrID());
-        }
-
-        Tuple newTuple = Tuple(parameterVector);
-        databaseObject.addTupleToRelation(factName, newTuple);
+    for (unsigned int i = 0; i < rulesVector.size(); i++) {
+        Node newNode(i);
+        forwardGraph.createNodes(i, newNode);
+        reversedGraph.createNodes(i, newNode);
     }
+
+    for (unsigned int i = 0; i < rulesVector.size(); i++) {
+        for (unsigned int j = 0; j < rulesVector.size(); j++) {
+            for (unsigned int k = 0; k < rulesVector.at(j)->returnRightSidePredicates().size(); k++) {
+                if (rulesVector.at(i)->returnHeadPredicate()->returnPredicateID() == rulesVector.at(j)->returnRightSidePredicates().at(k)->returnPredicateID()) {
+                    if (j == i) {
+                        forwardGraph.addNodeDependency(j,i,true); //I need at least one node per rule. Ranges wrong? check again.
+                        reversedGraph.addNodeDependency(i,j, true);
+                    }
+                    else {
+                        forwardGraph.addNodeDependency(j,i,false);
+                        reversedGraph.addNodeDependency(i,j, false);
+                    }
+
+                }
+            }
+        }
+    }
+    //check for self loops.
 }
 
 void Interpreter::runInterpreter() {
     addSchemes();
     addFacts();
-    addRulesToDB();
+    evaluateRulesOptimized(dataLogObject->getRules()); //fixed point algorithm function that takes in a vector rules --> SCC. for all scc evaluate via fixed point
+
+
+
+
+    //addRulesToDB();
     //databaseObject.toString();
 
     //Test Relation

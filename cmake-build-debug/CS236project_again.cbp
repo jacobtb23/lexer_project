@@ -136,6 +136,9 @@
 		<Unit filename="/users/guest/b/barnumj/project3/MultiplyAutomaton.h">
 			<Option target="CS236project_again"/>
 		</Unit>
+		<Unit filename="/users/guest/b/barnumj/project3/Node.h">
+			<Option target="CS236project_again"/>
+		</Unit>
 		<Unit filename="/users/guest/b/barnumj/project3/Parameter.h">
 			<Option target="CS236project_again"/>
 		</Unit>
@@ -188,6 +191,9 @@
 			<Option target="CS236project_again"/>
 		</Unit>
 		<Unit filename="/users/guest/b/barnumj/project3/UnterminatedStringAutomaton.h">
+			<Option target="CS236project_again"/>
+		</Unit>
+		<Unit filename="/users/guest/b/barnumj/project3/graph.h">
 			<Option target="CS236project_again"/>
 		</Unit>
 		<Unit filename="/users/guest/b/barnumj/project3/main.cpp">

@@ -18,6 +18,7 @@ CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Relation.h
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Rule.h
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Token.h
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Tuple.h
+CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../graph.h
 
 CMakeFiles/CS236project_again.dir/Lexer.cpp.o: ../AddAutomaton.h
 CMakeFiles/CS236project_again.dir/Lexer.cpp.o: ../Automaton.h
@@ -55,6 +56,7 @@ CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Relation.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Rule.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Token.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Tuple.h
+CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../graph.h
 
 CMakeFiles/CS236project_again.dir/Token.cpp.o: ../Token.cpp
 CMakeFiles/CS236project_again.dir/Token.cpp.o: ../Token.h
