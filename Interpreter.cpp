@@ -186,10 +186,16 @@ void Interpreter::addRulesToDB() {
     cout << count << " passes through the Rules." << endl; //eventually take out the first endl.
 }
 
+void Interpreter::evaluateSCCs(vector<set<int>> SCCs) {
+
+}
+
 void Interpreter::evaluateRulesOptimized(vector<Rule*> rulesVector) {
     //create dependency graphs
     createDependencyGraphs(rulesVector);
-
+    reversedGraph.DFSForrestReverse(reversedGraph); //?? return type?
+    reversedGraph.postOrderToString();
+    forwardGraph.DFSForrestForward(reversedGraph); //?? return type?
 }
 
 void Interpreter::createDependencyGraphs(vector<Rule*> rulesVector) {
@@ -215,12 +221,14 @@ void Interpreter::createDependencyGraphs(vector<Rule*> rulesVector) {
                         forwardGraph.addNodeDependency(j,i,false);
                         reversedGraph.addNodeDependency(i,j, false);
                     }
-
                 }
             }
         }
     }
-    //check for self loops.
+    forwardGraph.dependencyGraphToString();
+    reversedGraph.dependencyGraphToString();
+    cout << endl;
+    cout << "";
 }
 
 void Interpreter::runInterpreter() {
@@ -314,7 +322,6 @@ void Interpreter::runInterpreter() {
 //    testRelation2->addTuple(moretestTuple2);
 //
 //    testRelation->join(testRelation2);
-
 }
 
 

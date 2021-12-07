@@ -6,6 +6,7 @@
 #include "Relation.h"
 #include "Header.h"
 #include <iostream>
+#include <set>
 #include "Predicate.h"
 #include "graph.h"
 
@@ -48,6 +49,7 @@ public:
     void addSchemes();
     void addFacts();
     void addRulesToDB();
+    void evaluateSCCs(vector<set<int>> SCCs);
     void evaluateRulesOptimized(vector<Rule*> Rules);
     void createDependencyGraphs(vector<Rule*> Rules);
 

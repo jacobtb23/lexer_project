@@ -11,6 +11,7 @@ CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Database.h
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Header.h
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Interpreter.cpp
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Interpreter.h
+CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Node.h
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Parameter.h
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Parser.h
 CMakeFiles/CS236project_again.dir/Interpreter.cpp.o: ../Predicate.h
@@ -48,6 +49,7 @@ CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../DataLog.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Database.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Header.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Interpreter.h
+CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Node.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Parameter.h
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Parser.cpp
 CMakeFiles/CS236project_again.dir/Parser.cpp.o: ../Parser.h
