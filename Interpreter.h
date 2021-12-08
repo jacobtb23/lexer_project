@@ -54,6 +54,7 @@ public:
     void createDependencyGraphs(vector<Rule*> Rules);
 
 
+    int evaluateSingleRule(Rule *currentRule);
 };
 
 #endif //CS236PROJECT_AGAIN_INTERPRETER_H

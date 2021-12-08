@@ -186,16 +186,96 @@ void Interpreter::addRulesToDB() {
     cout << count << " passes through the Rules." << endl; //eventually take out the first endl.
 }
 
-void Interpreter::evaluateSCCs(vector<set<int>> SCCs) {
+void Interpreter::evaluateSCCs(vector<set<int>> SCCs) { //are we adding rules to the database object?
+    cout << "Rule Evaluation" << endl;
 
+    unsigned int count = 0;
+
+    for (unsigned int i = 0; i < SCCs.size(); i++) {
+        count = 0;
+        cout << "SCC: ";
+        string output = "";
+        for(int rule : SCCs.at(i)) {
+            output = output + "R" + to_string(rule) + ",";
+        }
+        output.pop_back();
+        cout << output;
+        cout << endl;
+
+        if(SCCs.at(i).size() == 1 && forwardGraph.returnNode(SCCs.at(i)).returnSelfLoopBool() == false) {
+            evaluateSingleRule(dataLogObject->getRules().at(*SCCs.at(i).begin()));
+            count = 1;
+        }
+        else {
+            vector<Relation*>rightHandSidePredicates;
+            int continueLoop = 1;
+            while(continueLoop > 0) {
+                continueLoop = 0;
+                count++;
+                for (int dependency : SCCs.at(i)) {
+                    continueLoop += evaluateSingleRule(dataLogObject->getRules().at(dependency));
+                }
+            }
+        }
+
+        cout << count << " passes: ";
+        output = "";
+        for(int rule : SCCs.at(i)) {
+            output = output + "R" + to_string(rule) + ",";
+        }
+        output.pop_back();
+        cout << output;
+        cout << endl;
+    }
+
+}
+
+int Interpreter::evaluateSingleRule (Rule* currentRule) {
+    vector<Relation *> rightHandSidePredicates;
+    currentRule->RulesToString();//Print out rule
+    cout << ".";
+    cout << endl;
+    rightHandSidePredicates.clear();
+
+    //Evaluate RHS Queries and push onto vector
+    for (Predicate *it: currentRule->returnRightSidePredicates()) {
+        rightHandSidePredicates.push_back(evaluateRules(it));
+    }
+
+    //Join Evaluated RHS queries.
+    Relation *joinedPredicate;
+    joinedPredicate = rightHandSidePredicates.at(0);
+    if (rightHandSidePredicates.size() > 1) { //If more than 1 RHS predicate exists
+        for (unsigned int j = 0; j < rightHandSidePredicates.size() - 1; j++) { //check this...
+            joinedPredicate = joinedPredicate->join(rightHandSidePredicates.at(j + 1)); //
+        }
+    } else { joinedPredicate = rightHandSidePredicates.at(0); } //use single RHS predicate as result.
+
+    //Project columns according to LHS rule head predicate.
+    vector<int> indices;
+    for (Parameter *it: currentRule->returnHeadPredicate()->returnParameterVector()) {
+        for (unsigned int k = 0; k < joinedPredicate->returnHeader()->returnAttributes().size(); k++) {
+            if (it->getStringOrID() == joinedPredicate->returnHeader()->returnAttributes().at(k)) {
+                indices.push_back(k);
+            }
+        }
+    }
+    joinedPredicate = joinedPredicate->project(indices);
+
+    //Rename according to head predicate header
+    joinedPredicate = joinedPredicate->rename(currentRule->returnHeadPredicate()->returnVectorOfStrings());
+
+    //populate schemes with new facts via union.
+    return databaseObject.findMatch(currentRule->returnHeadPredicate()->returnPredicateID())->unionOperator(joinedPredicate);
 }
 
 void Interpreter::evaluateRulesOptimized(vector<Rule*> rulesVector) {
     //create dependency graphs
     createDependencyGraphs(rulesVector);
     reversedGraph.DFSForrestReverse(reversedGraph); //?? return type?
-    reversedGraph.postOrderToString();
+    //reversedGraph.postOrderToString();
     forwardGraph.DFSForrestForward(reversedGraph); //?? return type?
+    evaluateSCCs(forwardGraph.returnSCCs());
 }
 
 void Interpreter::createDependencyGraphs(vector<Rule*> rulesVector) {
@@ -214,7 +294,7 @@ void Interpreter::createDependencyGraphs(vector<Rule*> rulesVector) {
             for (unsigned int k = 0; k < rulesVector.at(j)->returnRightSidePredicates().size(); k++) {
                 if (rulesVector.at(i)->returnHeadPredicate()->returnPredicateID() == rulesVector.at(j)->returnRightSidePredicates().at(k)->returnPredicateID()) {
                     if (j == i) {
-                        forwardGraph.addNodeDependency(j,i,true); //I need at least one node per rule. Ranges wrong? check again.
+                        forwardGraph.addNodeDependency(j,i,true);
                         reversedGraph.addNodeDependency(i,j, true);
                     }
                     else {
@@ -226,16 +306,13 @@ void Interpreter::createDependencyGraphs(vector<Rule*> rulesVector) {
         }
     }
     forwardGraph.dependencyGraphToString();
-    reversedGraph.dependencyGraphToString();
-    cout << endl;
-    cout << "";
 }
 
 void Interpreter::runInterpreter() {
     addSchemes();
     addFacts();
     evaluateRulesOptimized(dataLogObject->getRules()); //fixed point algorithm function that takes in a vector rules --> SCC. for all scc evaluate via fixed point
-
+    //databaseobject.toString?
 
 
 

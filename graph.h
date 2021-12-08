@@ -3,11 +3,10 @@
 #include "DataLog.h"
 #include "Node.h"
 #include <set>
-
-
 #include <map>
 #include <vector>
 #include <stack>
+#include <algorithm>
 
 using namespace std;
 
@@ -15,44 +14,81 @@ class graph {
 private:
 
     vector<int> postOrder;
-    stack<int> reversedPostorder;
     map<int, Node> nodeMap; //key = ruleIndex, which maps to all rules (set of ruleIndex ints) that the rule(represented by ruleIndex) is adjacent to. Shouldnt this be ordered?
     vector<set<int>> SCCVector;
-    set<int> SCCs;
 
 public:
 
     graph() {};
     ~graph() {};
 
-    void depthFirstSearch(Node currentNode) {
-        SCCs.clear(); //scc's clearing?
+    Node returnNode(set<int>SCCs) {
+        return nodeMap.at(*SCCs.begin());
+    }
+
+    vector<set<int>> returnSCCs() {
+        return SCCVector;
+    }
+
+    void depthFirstSearchSCCsHelper(Node currentNode,set<int>&emptySet) {
         nodeMap.at(currentNode.returnNodeId()).visit();
         if (currentNode.returnDependencySet().empty()) {
-            SCCs.insert(currentNode.returnNodeId());
+            postOrder.push_back(currentNode.returnNodeId());
+            emptySet.insert(currentNode.returnNodeId());
+        }
+        else {
+            for (int it: currentNode.returnDependencySet()) {
+                if (nodeMap.at(it).isVisited() == false) {
+                    depthFirstSearchSCCsHelper(nodeMap.at(it),emptySet); //what happens with empty set?
+                }
+            }
+            postOrder.push_back(currentNode.returnNodeId());
+            emptySet.insert(currentNode.returnNodeId());
+        }
+    }
+
+    set<int>depthFirstSearchSCCs(Node currentNode) {
+        set<int>SCCset;
+        nodeMap.at(currentNode.returnNodeId()).visit();
+        if (currentNode.returnDependencySet().empty()) {
+            postOrder.push_back(currentNode.returnNodeId());
+            SCCset.insert(currentNode.returnNodeId());
+        }
+        else {
+            for (int it: currentNode.returnDependencySet()) {
+                if (nodeMap.at(it).isVisited() == false) {
+                    depthFirstSearchSCCsHelper(nodeMap.at(it), SCCset);
+                }
+            }
+            postOrder.push_back(currentNode.returnNodeId());
+            SCCset.insert(currentNode.returnNodeId());
+        }
+        return SCCset;
+    }
+
+    void depthFirstSearch(Node currentNode) {
+        nodeMap.at(currentNode.returnNodeId()).visit();
+        if (currentNode.returnDependencySet().empty()) {
             postOrder.push_back(currentNode.returnNodeId());
         }
         else {
             for (int it: currentNode.returnDependencySet()) {
                 if (nodeMap.at(it).isVisited() == false) {
-                    depthFirstSearch(nodeMap.at(it)); //aren't dependent on anything, then evaluate according to order
+                    depthFirstSearch(nodeMap.at(it));
                 }
             }
-
-            SCCs.insert(currentNode.returnNodeId()); //Not working. Reverse postorder? Should I add in the same place as I do the postorder? //Should things already visited be included?
-            postOrder.push_back(currentNode.returnNodeId()); //would this be messing up my postorder?
+            postOrder.push_back(currentNode.returnNodeId());
         }
     }
 
     void DFSForrestForward(graph& reversedGraph){ //depth first search (finding post-order)
-        vector<int>::reverse_iterator it = reversedGraph.postOrder.rbegin();
-        while(it != reversedGraph.postOrder.rend()) {
-            if(nodeMap.at(*it).isVisited() == false){
-                depthFirstSearch(nodeMap.at(*it)); //STD out of range on last iteration
+        set<int> emptySet;
+        for(unsigned int i = reversedGraph.postOrder.size(); i > 0; i--) {
+            if(nodeMap.at(reversedGraph.postOrder.at(i-1)).isVisited() == false){
+                SCCVector.push_back(depthFirstSearchSCCs(nodeMap.at(reversedGraph.postOrder.at(i-1))));
             }
-            it++;
-            SCCVector.push_back(SCCs);
         }
+        cout << "";
     }
 
     void DFSForrestReverse(graph& reverseGraph) {
@@ -65,7 +101,7 @@ public:
 
     void addNodeDependency(int key, int dependency, bool selfLoop) {
         nodeMap.at(key).addDependency(dependency);
-        nodeMap.at(key).setSelfLoopBool(selfLoop);
+        if (selfLoop) {nodeMap.at(key).setSelfLoopBool(selfLoop);}
     }
 
     void createNodes(int key, Node newNode) {

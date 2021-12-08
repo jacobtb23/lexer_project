@@ -10,11 +10,16 @@ private:
     bool selfLoop = false;
     set<int> dependencies;
     int nodeID;
+
 public:
     Node(int key){
         nodeID = key;
     }
     ~Node(){}
+
+    bool returnSelfLoopBool() {
+        return selfLoop;
+    }
     void setSelfLoopBool(bool selfLoop) {
         this->selfLoop = selfLoop;
     }
